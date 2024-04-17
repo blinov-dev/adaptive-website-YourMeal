@@ -1,0 +1,19 @@
+// Здесь будут миксины
+
+// Миксин на медиазапрос по брейкпоинту для адаптива
+@mixin breakpoint($bp) {
+  @media (min-width: $bp) {
+    @content
+  }
+};
+
+
+//  Центрирование абсолютного элемента внутри контейнера
+@mixin absolute-position-center-element {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+};
