@@ -1,7 +1,10 @@
 /* здесь используйте глобальные переменные */
 
+// Ширина для медиазапроса. Брейкпоинт для max ширины
+$width-max: 1440px;
+
 // Ширина для медиазапроса. Брейкпоинт для десктопа
-$width-desktop: 1280px;
+$width-desktop: 1024px;
 
 // Ширина для медиазапроса. Брейкпоинт для планшета
 $width-tablet: 768px;
@@ -9,27 +12,9 @@ $width-tablet: 768px;
 // Ширина для медиазапроса. Брейкпоинт для мобильного устройства
 $width-mobile: 320px;
 
-// Максимальная ширина
-$max-width: 1920px;
-
-// z-index header
-$main-header--z-index: 2;
-// z-index span для кнопок
-$card-button__title--z-index: 2;
-// z-index product-info у карточек товаров
-$card-button__title--z-index: 2;
-
-// font-size для заголовка карточки товара
-$card-info__title--fs-normal: 24px;
-$card-info__title--fs-small: 18px;
-$card-info__title--fs-ex-small: 14px;
-
-//font-size для доп. заголовка карточки товара
-$card-info__sub-title--fs-normal: 17px;
-$card-info__sub-title--fs-small: 12px;
-$card-info__sub-title--fs-ex-small: 10px;
-
-//font-size для доп. заголовка карточки товара
-$card-info__compound-list--fs-normal: 17px;
-$card-info__compound-list--fs-small: 14px;
-$card-info__compound-list--fs-ex-small: 10px;
+//Цветовая палитра
+$page-color: rgba(249, 249, 249, 1);
+$main-color: rgba(255, 171, 8, 1);
+$additional-color: rgba(255, 112, 32, 1);
+$white-color: rgba(255, 255, 255, 1);
+$black-color: rgba(0, 0, 0, 1);

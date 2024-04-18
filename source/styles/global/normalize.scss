@@ -42,6 +42,9 @@ figure {
 button {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
 }
 
 fieldset {
@@ -52,4 +55,3 @@ legend {
   margin: 0;
   padding: 0;
 }
-

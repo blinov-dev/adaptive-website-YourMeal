@@ -14,7 +14,7 @@
 
 html {
   height: 100%;
-  background-color: #fff;
+  background-color: $page-color;
 }
 
 body {
@@ -24,28 +24,29 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  font-family: "Kodchasan", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
   line-height: normal;
-  background-color: #fff;
+  background-color: $page-color;
   color: #000;
+  overflow: hidden;
   @media (min-width: $width-tablet) {
-    min-width: 768px;
+    min-width: $width-tablet;
   }
   @media (min-width: $width-desktop) {
-    max-width: 1600px;
+    min-width: $width-desktop;
+  }
+  @media (min-width: $width-max) {
+    min-width: $width-max;
   }
 }
 
 /* Прижатие футера к низу страницы */
 .page-main {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  row-gap: calc(20px + (130 - 20) * ((100vw - 320px) / (1600 - 320)));
-  @media (min-width: $max-width) {
-    row-gap: 130px;
-  }
+  padding: 25px 75px 150px 75px;
 }
-

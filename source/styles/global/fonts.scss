@@ -1,1 +1,24 @@
 /* здесь подключите шрифты*/
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/Nunito/Nunito-Regular.ttf") format("ttf")
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/Nunito/Nunito-ExtraBold.ttf") format("ttf")
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("/fonts/Nunito/Nunito-SemiBold.ttf") format("ttf")
+}

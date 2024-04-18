@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html class="page" lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <title>Название проекта</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/index.js" defer></script>
-  </head>
-  <body class="page__body">
-    <header class="header">Шапка</header>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>YourMeal</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="images/favicon.ico"><!-- 64×64 -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/index.js" defer></script>
+</head>
+
+<body class="page__body">
+  <header class="main-header">
+    <a class="main-logo" href="index.html">
+      <svg class='main-logo__svg' width="153" height="35">
+        <use class="main-logo" href="images/sprite.svg#main-logo"></use>
+      </svg>
+    </a>
+    <div class="preview">
+      <div class="preview__img">
+        <img src="images/preview/preview-burger@1x.png" alt="Большой бургер">
+      </div>
+      <div class="preview__text-block">
+        <h1 class="visually-hidden">Онлайн магазин еды YourMeal</h1>
+        <p class="preview__title">Только самые
+          <b>сочные бургеры!</b>
+        </p>
+        <p class="preview__description">
+          Бесплатная доставка от <b>599₽</b>
+        </p>
+      </div>
+    </div>
+    <div class="main-header__decor"></div>
+  </header>
+  <main class="page-main">
+    <div class="product-filter">
+      <ul class="product-filter__list">
+        <li class="product-filter__item">
+          <button class="product-filter__button product-filter__button--active" id="filter-button-burgers">
+            Бургеры
+          </button>
+        </li>
+        <li class="product-filter__item">
+          <button class="product-filter__button" id="filter-button-snacks">
+            Закуски
+          </button>
+        </li>
+        <li class="product-filter__item">
+          <button class="product-filter__button" id="filter-button-hotdogs">
+            Хот-доги
+          </button>
+        </li>
+        <li class="product-filter__item">
+          <button class="product-filter__button" id="filter-button-combo">
+            Комбо
+          </button>
+        </li>
+        <li class="product-filter__item">
+          <button class="product-filter__button" id="filter-button-shawarma">
+            Шаурма
+          </button>
+        </li>
+        <li class="product-filter__item">
+          <button class="product-filter__button" id="filter-button-pizza">
+            Пицца
+          </button>
+        </li>
+        <li class="product-filter__item">
+          <button class="product-filter__button" id="filter-button-wok">
+            Вок
+          </button>
+        </li>
+        <li class="product-filter__item">
+          <button class="product-filter__button" id="filter-button-desserts">
+            Десерты
+          </button>
+        </li>
+        <li class="product-filter__item">
+          <button class="product-filter__button" id="filter-button-sauces">
+            Соусы
+          </button>
+        </li>
+        <li class="product-filter__item">
+          <button class="product-filter__button" id="filter-button-sauces">
+            rjat b ltcthnsasdasdasdasd
+          </button>
+        </li>
+      </ul>
+    </div>
+  </main>
+</body>
+
 </html>
