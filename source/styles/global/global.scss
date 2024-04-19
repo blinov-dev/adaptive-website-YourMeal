@@ -49,4 +49,8 @@ body {
   flex-direction: column;
   flex-grow: 1;
   padding: 25px 75px 150px 75px;
+  @media (min-width: $width-max) {
+    max-width: $width-max;
+    margin: auto;
+  }
 }
