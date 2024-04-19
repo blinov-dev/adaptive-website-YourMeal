@@ -81,13 +81,55 @@
             Соусы
           </button>
         </li>
-        <li class="product-filter__item">
-          <button class="product-filter__button" id="filter-button-sauces">
-            rjat b ltcthnsasdasdasdasd
-          </button>
-        </li>
       </ul>
     </div>
+    <section class="catalog">
+      <form class="basket">
+        <div class="basket-header">
+          <h3 class="basket-header__title">Корзина</h3>
+          <input class="visually-hidden" type="text" name="basket-counter" id="basket-counter-input" value="">
+          <span class="basket-header__counter">4</span>
+        </div>
+        <ul class="basket__list">
+          <li class="basket__item">
+            <div class="thumbnails-product">
+              <div class="thumbnails-product__img">
+                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
+              </div>
+              <div class="thumbnails-product__info">
+                <input class="visually-hidden" type="text" name="product-name" id="product-name" value="Супер сырный">
+                <span class="thumbnails-product__title">Супер сырный</span>
+                <span class="thumbnails-product__weight">
+                  512г
+                </span>
+                <input class="visually-hidden" type="text" name="product-price" id="product-price" value="550₽">
+                <span class="thumbnails-product__price">550₽</span>
+              </div>
+              <div class="thumbnails-product__control">
+                <div class="control-wrapper">
+                  <button class="control-decrease" type="button"></button>
+                  <input class="visually-hidden" type="text" name="product-counter" value="1">
+                  <span class="thumbnails-product__quantity">1</span>
+                  <button class="control-increase" type="button"></button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="basket-result">
+          <span class="basket-result__title">Итого</span>
+          <input class="visually-hidden" type="text" name="basket-result" id="basket-result-input" value="">
+          <span class="basket-result__value">550₽</span>
+        </div>
+        <button class="basket__submit" type="submit">Оформить заказ</button>
+        <span class="basket__type-delivery basket__type-delivery--select">Бесплатная доставка</span>
+        <span class="basket__type-delivery">Платная доставка 250₽</span>
+      </form>
+      <div class="catalog__products">
+        <h2>Бургеры</h2>
+
+      </div>
+    </section>
   </main>
 </body>
 
