@@ -1,11 +1,15 @@
 .basket {
   min-width: 300px;
+  min-height: max-content;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   padding: 24px 16px;
   border-radius: 18px;
   background-color: $white-color;
+  .basket__empty {
+    display: none;
+  }
 }
 
 .basket-header {
@@ -53,6 +57,17 @@
   padding: 12px 0;
   margin-top: 24px;
   color: $white-color;
+
+  &:hover {
+    background-color: $main-color;
+    color: $white-color;
+  }
+  &:active {
+    background-color: $dark-additional-color;
+  }
+  &:disabled {
+    opacity: 0.3;
+  }
 }
 
 .basket__type-delivery {
@@ -72,5 +87,22 @@
 
   &--select {
     display: flex;
+  }
+}
+
+//Класс для пустой корзины
+.basket--empty {
+  .basket__list,
+  .basket-result,
+  .basket__submit,
+  .basket__type-delivery {
+    display: none;
+  }
+  .basket__empty {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.8px;
+    margin: 5px 0;
   }
 }

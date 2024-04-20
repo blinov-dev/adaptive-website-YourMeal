@@ -55,4 +55,17 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 16px;
+
+  &:hover {
+    background-color: $main-color;
+    color: $white-color;
+  }
+  &:active {
+    background-color: $dark-additional-color;
+    color: $white-color;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
 }

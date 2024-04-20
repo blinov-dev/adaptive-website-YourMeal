@@ -12,6 +12,7 @@
 
 .catalog__wrapper {
   display: grid;
+  align-items: flex-start;
   gap: 30px;
   grid-template-columns: 0.5fr 2fr;
   margin-top: 30px;

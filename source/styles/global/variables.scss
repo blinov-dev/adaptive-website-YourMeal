@@ -16,7 +16,15 @@ $width-mobile: 320px;
 $page-color: rgba(249, 249, 249, 1);
 $main-color: rgba(255, 171, 8, 1);
 $additional-color: rgba(255, 112, 32, 1);
+$dark-additional-color: rgba(248, 99, 16, 1);
 $white-color: rgba(255, 255, 255, 1);
 $black-color: rgba(0, 0, 0, 1);
 $grey-color: rgba(242, 242, 243, 1);
 $light-grey-color: rgba(177, 177, 177, 1);
+$dark-grey-color: rgba(177, 177, 177, 1);
+
+//z-index counter
+$z-index-level-one: 1;
+$z-index-level-two: 2;
+$z-index-level-three: 3;
+$z-index-level-four: 4;

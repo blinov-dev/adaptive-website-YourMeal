@@ -107,7 +107,7 @@
                   <input class="visually-hidden" type="text" name="product-price" id="product-price" value="550₽">
                   <span class="thumbnails-product__price">550₽</span>
                 </div>
-                <div class="thumbnails-product__control">
+                <div class="thumbnails-product__control product-control">
                   <div class="control-wrapper">
                     <button class="control-decrease" type="button"></button>
                     <input class="visually-hidden" type="text" name="product-counter" value="1">
@@ -124,8 +124,10 @@
             <span class="basket-result__value">550₽</span>
           </div>
           <button class="basket__submit" type="submit">Оформить заказ</button>
+
           <span class="basket__type-delivery basket__type-delivery--select">Бесплатная доставка</span>
           <span class="basket__type-delivery">Платная доставка 250₽</span>
+          <span class="visually-hidden basket__empty">Тут пока пусто :(</span>
         </form>
         <div class="products">
           <ul class="products__list">
@@ -224,6 +226,102 @@
       </div>
     </section>
   </main>
+  <footer class="main-footer">
+    <a class="main-logo" href="index.html">
+      <svg class='main-logo__svg' width="153" height="35">
+        <use class="main-logo" href="images/sprite.svg#main-logo"></use>
+      </svg>
+    </a>
+    <div class="contacts">
+      <span class="contacts__title">Номер для заказа</span>
+      <a class="contacts__phone" href=»tel:88005553535″>
+        <svg class='contacts__svg' width="24" height="18">
+          <use class="phone-icon" href="images/sprite.svg#phone-icon"></use>
+        </svg>
+        +7 (800)-555-35-35
+      </a>
+    </div>
+    <div class="socials contacts">
+      <span class="socials__title contacts__title">Мы в соцсетях</span>
+      <ul class="socials__list">
+        <li class="socials__item">
+          <a class="socials__link" href="#">
+            <svg class='socials__svg' width="24" height="24">
+              <use class="instagram-icon" href="images/sprite.svg#vkontakte-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a class="socials__link" href="#">
+            <svg class='socials__svg' width="20" height="20">
+              <use class="vkontakte-icon" href="images/sprite.svg#telegram-icon"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div class="copyright">
+      <span class="name-site">© YouMeal, 2024</span>
+      <span class="autor-site">Blinov Alexandr</span>
+      <span class="autor-makets">Design: Anastasia Ilina</span>
+    </div>
+  </footer>
+
+
+  <div class="modal-wrapper">
+    <div class="product-modal">
+      <div class="product-modal__header">
+        <span class="product-modal__title">Супер сырный</span>
+        <button class="product-modal__close-button" type="button"></button>
+      </div>
+      <div class="product-modal__main">
+        <div class="product-modal__img">
+          <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
+        </div>
+        <div class="product-modal__text-block">
+          <p class="product-modal__info">Супер мясное наслаждение! Большая рубленая котлета из свежего говяжего мяса
+            покорит вас своей сочностью, а хрустящие листья салата добавят свежести.</p>
+          <div class="composition-product">
+            <span class="composition__title">Состав:</span>
+            <ul class="composition-product__list">
+              <li class="composition-product__item">
+                Пшеничная булочка
+              </li>
+              <li class="composition-product__item">
+                Котлета из говядины
+              </li>
+              <li class="composition-product__item">
+                Красный лук
+              </li>
+              <li class="composition-product__item">
+                Листья салата
+              </li>
+              <li class="composition-product__item">
+                Соус горчичный
+              </li>
+            </ul>
+            <span class="composition-product__weight">
+              512г, ккал 390
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="product-modal__footer">
+        <button class="product-modal__button" type="button">Добавить</button>
+        <div class="product-modal__control product-control">
+          <div class="control-wrapper">
+            <button class="control-decrease" type="button"></button>
+            <input class="visually-hidden" type="text" name="product-counter" value="1">
+            <span class="product-modal__quantity">1</span>
+            <button class="control-increase" type="button"></button>
+          </div>
+        </div>
+        <span class="product-modal__price">550₽</span>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 </html>

@@ -5,6 +5,10 @@
 @import "./global/global.scss";
 @import "./global/fonts.scss";
 
+/* ELEMENTS */
+@import "./elements/product-control.scss";
+@import "./elements/main-logo.scss";
+
 /* BLOCKS */
 @import "./blocks/main-header.scss";
 @import "./blocks/product-filter.scss";
@@ -12,3 +16,5 @@
 @import "./blocks/basket.scss";
 @import "./blocks/basket-list.scss";
 @import "./blocks/products.scss";
+@import "./blocks/product-modal.scss";
+@import "./blocks/main-footer.scss";
