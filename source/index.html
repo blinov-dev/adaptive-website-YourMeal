@@ -84,14 +84,13 @@
       </ul>
     </div>
     <section class="catalog">
-      <h2 class="catalog__title">Бургеры</h2>
-      <div class="catalog__wrapper">
-        <form class="basket">
-          <div class="basket-header">
-            <h3 class="basket-header__title">Корзина</h3>
-            <input class="visually-hidden" type="text" name="basket-counter" id="basket-counter-input" value="">
-            <span class="basket-header__counter">4</span>
-          </div>
+      <form class="basket basket-mobil basket__mobile--ope basket--clea">
+        <div class="basket-header">
+          <h3 class="basket-header__title">Корзина</h3>
+          <input class="visually-hidden" type="text" name="basket-counter" id="basket-counter-input" value="">
+          <span class="basket-header__counter">4</span>
+        </div>
+        <div class="basket__wrapper">
           <ul class="basket__list">
             <li class="basket__item">
               <div class="thumbnails-product">
@@ -125,104 +124,107 @@
           </div>
           <button class="basket__submit" type="submit">Оформить заказ</button>
 
-          <span class="basket__type-delivery basket__type-delivery--select">Бесплатная доставка</span>
-          <span class="basket__type-delivery">Платная доставка 250₽</span>
-          <span class="visually-hidden basket__empty">Тут пока пусто :(</span>
-        </form>
-        <div class="products">
-          <ul class="products__list">
-            <li class="products__item">
-              <div class="product">
-                <div class="product__img">
-                  <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-                </div>
-                <div class="product__info">
-                  <span class="product__price">550₽</span>
-                  <span class="product__title">Супер сырный</span>
-                  <span class="product__weight">
-                    512г
-                  </span>
-                </div>
-                <button class="product__button" type="button">Добавить</button>
-              </div>
-            </li>
-            <li class="products__item">
-              <div class="product">
-                <div class="product__img">
-                  <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-                </div>
-                <div class="product__info">
-                  <span class="product__price">550₽</span>
-                  <span class="product__title">Супер сырный</span>
-                  <span class="product__weight">
-                    512г
-                  </span>
-                </div>
-                <button class="product__button" type="button">Добавить</button>
-              </div>
-            </li>
-            <li class="products__item">
-              <div class="product">
-                <div class="product__img">
-                  <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-                </div>
-                <div class="product__info">
-                  <span class="product__price">550₽</span>
-                  <span class="product__title">Супер сырный</span>
-                  <span class="product__weight">
-                    512г
-                  </span>
-                </div>
-                <button class="product__button" type="button">Добавить</button>
-              </div>
-            </li>
-            <li class="products__item">
-              <div class="product">
-                <div class="product__img">
-                  <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-                </div>
-                <div class="product__info">
-                  <span class="product__price">550₽</span>
-                  <span class="product__title">Супер сырный</span>
-                  <span class="product__weight">
-                    512г
-                  </span>
-                </div>
-                <button class="product__button" type="button">Добавить</button>
-              </div>
-            </li>
-            <li class="products__item">
-              <div class="product">
-                <div class="product__img">
-                  <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-                </div>
-                <div class="product__info">
-                  <span class="product__price">550₽</span>
-                  <span class="product__title">Супер сырный</span>
-                  <span class="product__weight">
-                    512г
-                  </span>
-                </div>
-                <button class="product__button" type="button">Добавить</button>
-              </div>
-            </li>
-            <li class="products__item">
-              <div class="product">
-                <div class="product__img">
-                  <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-                </div>
-                <div class="product__info">
-                  <span class="product__price">550₽</span>
-                  <span class="product__title">Супер сырный</span>
-                  <span class="product__weight">
-                    512г
-                  </span>
-                </div>
-                <button class="product__button" type="button">Добавить</button>
-              </div>
-            </li>
-          </ul>
+          <div class="type-delivery">
+            <span class="basket__type-delivery basket__type-delivery--select">Бесплатная доставка</span>
+            <span class="basket__type-delivery">Платная доставка 250₽</span>
+            <span class="visually-hidden basket__empty">Тут пока пусто :(</span>
+          </div>
         </div>
+      </form>
+      <div class="products">
+        <h2 class="catalog__title">Бургеры</h2>
+        <ul class="products__list">
+          <li class="products__item">
+            <div class="product">
+              <div class="product__img">
+                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
+              </div>
+              <div class="product__info">
+                <span class="product__price">550₽</span>
+                <span class="product__title">Супер сырный</span>
+                <span class="product__weight">
+                  512г
+                </span>
+              </div>
+              <button class="product__button" type="button">Добавить</button>
+            </div>
+          </li>
+          <li class="products__item">
+            <div class="product">
+              <div class="product__img">
+                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
+              </div>
+              <div class="product__info">
+                <span class="product__price">550₽</span>
+                <span class="product__title">Супер сырный</span>
+                <span class="product__weight">
+                  512г
+                </span>
+              </div>
+              <button class="product__button" type="button">Добавить</button>
+            </div>
+          </li>
+          <li class="products__item">
+            <div class="product">
+              <div class="product__img">
+                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
+              </div>
+              <div class="product__info">
+                <span class="product__price">550₽</span>
+                <span class="product__title">Супер сырный</span>
+                <span class="product__weight">
+                  512г
+                </span>
+              </div>
+              <button class="product__button" type="button">Добавить</button>
+            </div>
+          </li>
+          <li class="products__item">
+            <div class="product">
+              <div class="product__img">
+                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
+              </div>
+              <div class="product__info">
+                <span class="product__price">550₽</span>
+                <span class="product__title">Супер сырный</span>
+                <span class="product__weight">
+                  512г
+                </span>
+              </div>
+              <button class="product__button" type="button">Добавить</button>
+            </div>
+          </li>
+          <li class="products__item">
+            <div class="product">
+              <div class="product__img">
+                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
+              </div>
+              <div class="product__info">
+                <span class="product__price">550₽</span>
+                <span class="product__title">Супер сырный</span>
+                <span class="product__weight">
+                  512г
+                </span>
+              </div>
+              <button class="product__button" type="button">Добавить</button>
+            </div>
+          </li>
+          <li class="products__item">
+            <div class="product">
+              <div class="product__img">
+                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
+              </div>
+              <div class="product__info">
+                <span class="product__price">550₽</span>
+                <span class="product__title">Супер сырный</span>
+                <span class="product__weight">
+                  512г
+                </span>
+              </div>
+              <button class="product__button" type="button">Добавить</button>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
   </main>

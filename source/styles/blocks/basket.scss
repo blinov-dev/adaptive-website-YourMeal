@@ -1,14 +1,24 @@
 .basket {
-  min-width: 300px;
-  min-height: max-content;
+  position: static;
   display: flex;
   flex-direction: column;
+  min-width: 300px;
+  min-height: max-content;
   box-sizing: border-box;
   padding: 24px 16px;
   border-radius: 18px;
   background-color: $white-color;
+  cursor: pointer;
+  .basket__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
   .basket__empty {
     display: none;
+  }
+
+  @media (min-width: $width-desktop) {
+    margin-top: 66px;
   }
 }
 
@@ -91,7 +101,7 @@
 }
 
 //Класс для пустой корзины
-.basket--empty {
+.basket--clear {
   .basket__list,
   .basket-result,
   .basket__submit,
@@ -106,3 +116,49 @@
     margin: 5px 0;
   }
 }
+
+// Корзина под планшеты и мобилки
+.basket-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  cursor: pointer;
+
+  .basket-header {
+    margin-bottom: 0px;
+  }
+
+  .basket__wrapper {
+    display: none;
+  }
+}
+
+// Открытие корзины
+.basket__mobile--open {
+  .basket-header {
+    margin-bottom: 12px;
+  }
+
+  .basket__wrapper {
+    display: flex;
+  }
+}
+
+/* Логика корзины
+
+1) Если в корзине нет товаров,
+то на нее вешается класс .basket--clear
+2) Если в корзине есть товары,
+то c нее убирается класс .basket--empty
+
+
+Открытие / закрытие
+В десктопной версии корзина сразу открыта
+
+В планшетной и мобильной версии корзина сразу закрыта, и будет доступно нажатие на нее для открытия
+
+1) Клик по корзине навешивает на нее класс basket__mobile--open и открывает ее
+
+Правила наличия товаров, описанные выше, должны отрабатывать
+*/

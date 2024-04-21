@@ -55,11 +55,8 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  padding: 25px 32px 0px 25px;
+  padding: 25px 10px 0px 10px;
   @media (min-width: $width-tablet) {
-    padding: 25px 32px 0px 25px;
-  }
-  @media (min-width: $width-desktop) {
     padding: 25px 32px 0px 32px;
   }
   @media (min-width: $width-max) {

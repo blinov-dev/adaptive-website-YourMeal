@@ -1,18 +1,27 @@
 .product-filter {
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  @media (min-width: $width-tablet) {
+    margin-bottom: 50px;
+  }
 }
 
 .product-filter__list {
   max-width: 100%;
   box-sizing: border-box;
   display: grid;
+  justify-content: center;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  @media (min-width: $width-tablet) {
+    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
 }
 
 .product-filter__button {
+  width: 100%;
   display: flex;
   gap: 5px;
   align-items: center;
