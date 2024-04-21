@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="icon" href="images/favicon.ico"><!-- 64×64 -->
   <link rel="stylesheet" href="styles/styles.css">
-  <script src="scripts/index.js" defer></script>
+  <script src="scripts/index.js" defer type="module"></script>
 </head>
 
 <body class="page__body">
@@ -84,7 +84,7 @@
       </ul>
     </div>
     <section class="catalog">
-      <form class="basket basket-mobil basket__mobile--ope basket--clea">
+      <form class="basket basket__mobile--open basket--clea" id="order-form">
         <div class="basket-header">
           <h3 class="basket-header__title">Корзина</h3>
           <input class="visually-hidden" type="text" name="basket-counter" id="basket-counter-input" value="">

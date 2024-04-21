@@ -1,5 +1,5 @@
 .basket {
-  position: static;
+  // position: static;
   display: flex;
   flex-direction: column;
   min-width: 300px;
@@ -9,18 +9,51 @@
   border-radius: 18px;
   background-color: $white-color;
   cursor: pointer;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+  cursor: pointer;
+
+  .basket-header {
+    margin-bottom: 0px;
+  }
+
   .basket__wrapper {
-    display: flex;
-    flex-direction: column;
+    display: none;
   }
   .basket__empty {
     display: none;
   }
 
   @media (min-width: $width-desktop) {
+    position: static;
     margin-top: 66px;
+
+    .basket__wrapper {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
+
+// Корзина под планшеты и мобилки
+// .basket-mobile {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   margin-top: 0;
+//   cursor: pointer;
+
+//   .basket-header {
+//     margin-bottom: 0px;
+//   }
+
+//   .basket__wrapper {
+//     display: none;
+//   }
+// }
 
 .basket-header {
   display: flex;
@@ -117,31 +150,14 @@
   }
 }
 
-// Корзина под планшеты и мобилки
-.basket-mobile {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin-top: 0;
-  cursor: pointer;
-
-  .basket-header {
-    margin-bottom: 0px;
-  }
-
-  .basket__wrapper {
-    display: none;
-  }
-}
-
 // Открытие корзины
 .basket__mobile--open {
   .basket-header {
     margin-bottom: 12px;
   }
-
   .basket__wrapper {
     display: flex;
+    flex-direction: column;
   }
 }
 
