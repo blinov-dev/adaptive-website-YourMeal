@@ -2,25 +2,43 @@
   box-sizing: border-box;
   width: 100%;
   position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 25px;
-  padding: 25px 75px 60px 25px;
+  padding: 25px 32px 70px 25px;
+  @media (min-width: $width-tablet) {
+    gap: 15px;
+    padding: 25px 75px 50px 75px;
+  }
+  @media (min-width: $width-desktop) {
+    padding: 25px 32px 70px 32px;
+  }
+  @media (min-width: $width-max) {
+    padding: 25px 75px 70px 75px;
+  }
 }
 
 .main-header__decor {
   position: absolute;
-  top: -50%;
   z-index: $z-index-level-one;
   background-color: $main-color;
-  width: 112%;
-  height: 700px;
-  border-radius: 50%;
+  width: 150%;
+  height: 100%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  @media (min-width: $width-tablet) {
+    width: 120%;
+  }
+  @media (min-width: $width-desktop) {
+
+  }
+  @media (min-width: $width-max) {
+
+  }
 }
-
-
 
 .preview {
   z-index: 2;
@@ -39,10 +57,24 @@
     height: 100%;
     object-fit: contain;
   }
+  @media (min-width: $width-tablet) {
+    width: 227px;
+    height: 229px;
+  }
+  @media (min-width: $width-desktop) {
+    width: 326px;
+    height: 326px;
+  }
 }
 
 .preview__text-block {
   padding: 50px 10px;
+  @media (min-width: $width-tablet) {
+    padding: 30px 10px;
+  }
+  @media (min-width: $width-desktop) {
+    padding: 50px 10px;
+  }
 }
 
 .preview__title {
@@ -52,8 +84,19 @@
   font-size: 50px;
   line-height: 60px;
   margin-bottom: 50px;
+  word-wrap: break-word;
   b {
     color: $additional-color;
+  }
+  @media (min-width: $width-tablet) {
+    max-width: 330px;
+    font-size: 36px;
+    line-height: 43px;
+  }
+  @media (min-width: $width-desktop) {
+    max-width: 450px;
+    font-size: 50px;
+    line-height: 60px;
   }
 }
 
@@ -64,5 +107,13 @@
   line-height: 30px;
   b {
     font-weight: 600;
+  }
+  @media (min-width: $width-tablet) {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  @media (min-width: $width-desktop) {
+    font-size: 20px;
+    line-height: 30px;
   }
 }
