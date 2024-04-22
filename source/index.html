@@ -84,7 +84,7 @@
       </ul>
     </div>
     <section class="catalog">
-      <form class="basket basket__mobile--open basket--clea" id="order-form">
+      <form class="basket basket--clea" id="order-form">
         <div class="basket-header">
           <h3 class="basket-header__title">Корзина</h3>
           <input class="visually-hidden" type="text" name="basket-counter" id="basket-counter-input" value="">
@@ -132,98 +132,9 @@
         </div>
       </form>
       <div class="products">
-        <h2 class="catalog__title">Бургеры</h2>
+        <h2 class="products__title">Бургеры</h2>
         <ul class="products__list">
-          <li class="products__item">
-            <div class="product">
-              <div class="product__img">
-                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-              </div>
-              <div class="product__info">
-                <span class="product__price">550₽</span>
-                <span class="product__title">Супер сырный</span>
-                <span class="product__weight">
-                  512г
-                </span>
-              </div>
-              <button class="product__button" type="button">Добавить</button>
-            </div>
-          </li>
-          <li class="products__item">
-            <div class="product">
-              <div class="product__img">
-                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-              </div>
-              <div class="product__info">
-                <span class="product__price">550₽</span>
-                <span class="product__title">Супер сырный</span>
-                <span class="product__weight">
-                  512г
-                </span>
-              </div>
-              <button class="product__button" type="button">Добавить</button>
-            </div>
-          </li>
-          <li class="products__item">
-            <div class="product">
-              <div class="product__img">
-                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-              </div>
-              <div class="product__info">
-                <span class="product__price">550₽</span>
-                <span class="product__title">Супер сырный</span>
-                <span class="product__weight">
-                  512г
-                </span>
-              </div>
-              <button class="product__button" type="button">Добавить</button>
-            </div>
-          </li>
-          <li class="products__item">
-            <div class="product">
-              <div class="product__img">
-                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-              </div>
-              <div class="product__info">
-                <span class="product__price">550₽</span>
-                <span class="product__title">Супер сырный</span>
-                <span class="product__weight">
-                  512г
-                </span>
-              </div>
-              <button class="product__button" type="button">Добавить</button>
-            </div>
-          </li>
-          <li class="products__item">
-            <div class="product">
-              <div class="product__img">
-                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-              </div>
-              <div class="product__info">
-                <span class="product__price">550₽</span>
-                <span class="product__title">Супер сырный</span>
-                <span class="product__weight">
-                  512г
-                </span>
-              </div>
-              <button class="product__button" type="button">Добавить</button>
-            </div>
-          </li>
-          <li class="products__item">
-            <div class="product">
-              <div class="product__img">
-                <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-              </div>
-              <div class="product__info">
-                <span class="product__price">550₽</span>
-                <span class="product__title">Супер сырный</span>
-                <span class="product__weight">
-                  512г
-                </span>
-              </div>
-              <button class="product__button" type="button">Добавить</button>
-            </div>
-          </li>
+          <!-- Сюда рендерятся карточки товаров -->
         </ul>
       </div>
     </section>
@@ -324,6 +235,22 @@
     </div>
   </div>
 
+  <template id="catalog-product" name="catalog-product">
+    <li class="products__item">
+      <div class="product">
+        <div class="product__img">
+          <img src="" alt="">
+        </div>
+        <div class="product__info">
+          <span class="product__price"></span>
+          <span class="product__title"></span>
+          <span class="product__weight">
+          </span>
+        </div>
+        <button class="product__button" type="button"></button>
+      </div>
+    </li>
+  </template>
 </body>
 
 </html>
