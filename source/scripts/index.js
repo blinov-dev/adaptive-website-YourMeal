@@ -1,5 +1,5 @@
 /* в этот файл добавляет скрипты*/
-import { selectFilter } from "./filter-products.js";
+import "./filter-products.js";
 import "./basket.js";
-import { products } from "./data-products.js";
-
+import "./adding-item-to-basket.js";
+import "./product-modal.js";

@@ -1,13 +1,12 @@
 import { renderProduct } from "./render-products";
 import { products } from "./data-products.js";
 const filterButton = document.querySelectorAll(".product-filter__button");
+const buttonFilteredBurgers = document.querySelector("#filter-button-burgers");
 
 function clearProducts() {
   const rendersProducts = document.querySelectorAll(".products__item");
   rendersProducts.forEach((element) => element.remove());
 }
-
-renderProduct(products);
 
 function selectFilter() {
   if (!this.classList.contains("product-filter__button--active")) {
@@ -47,3 +46,5 @@ function selectFilter() {
 filterButton.forEach(function (element) {
   element.addEventListener("click", selectFilter);
 });
+
+buttonFilteredBurgers.click();

@@ -37,7 +37,7 @@
     <div class="product-filter">
       <ul class="product-filter__list">
         <li class="product-filter__item">
-          <button class="product-filter__button product-filter__button--active" id="filter-button-burgers">
+          <button class="product-filter__button" id="filter-button-burgers">
             Бургеры
           </button>
         </li>
@@ -92,7 +92,7 @@
         </div>
         <div class="basket__wrapper">
           <ul class="basket__list">
-            <li class="basket__item">
+            <!-- <li class="basket__item">
               <div class="thumbnails-product">
                 <div class="thumbnails-product__img">
                   <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
@@ -115,7 +115,7 @@
                   </div>
                 </div>
               </div>
-            </li>
+            </li> -->
           </ul>
           <div class="basket-result">
             <span class="basket-result__title">Итого</span>
@@ -193,7 +193,8 @@
           <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
         </div>
         <div class="product-modal__text-block">
-          <p class="product-modal__info">Супер мясное наслаждение! Большая рубленая котлета из свежего говяжего мяса
+          <p class="product-modal__description">Супер мясное наслаждение! Большая рубленая котлета из свежего говяжего
+            мяса
             покорит вас своей сочностью, а хрустящие листья салата добавят свежести.</p>
           <div class="composition-product">
             <span class="composition__title">Состав:</span>
@@ -246,8 +247,39 @@
           <span class="product__title"></span>
           <span class="product__weight">
           </span>
+          <span class="product__description"></span>
+          <ul class="composition-product__list">
+            <li class="composition-product__item">
+            </li>
         </div>
         <button class="product__button" type="button"></button>
+      </div>
+    </li>
+  </template>
+
+
+  <template id="basket-product" name="basket-product">
+    <li class="basket__item">
+      <div class="thumbnails-product">
+        <div class="thumbnails-product__img">
+          <img src="" alt="">
+        </div>
+        <div class="thumbnails-product__info">
+          <input class="visually-hidden" type="text" name="product-name" id="product-name" value="Супер сырный">
+          <span class="thumbnails-product__title"></span>
+          <span class="thumbnails-product__weight">
+          </span>
+          <input class="visually-hidden" type="text" name="product-price" id="product-price" value="550₽">
+          <span class="thumbnails-product__price"></span>
+        </div>
+        <div class="thumbnails-product__control product-control">
+          <div class="control-wrapper">
+            <button class="control-decrease" type="button"></button>
+            <input class="visually-hidden" type="text" name="product-counter" value="1">
+            <span class="thumbnails-product__quantity"></span>
+            <button class="control-increase" type="button"></button>
+          </div>
+        </div>
       </div>
     </li>
   </template>

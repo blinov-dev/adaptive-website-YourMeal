@@ -1,10 +1,13 @@
 .modal-wrapper {
-  display: none;
-  position: absolute;
+  position: fixed;
   z-index: $z-index-level-three;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
+
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateX(-100%);
 }
 
 .product-modal {
@@ -79,7 +82,7 @@
     gap: 20px;
     flex-direction: column;
 
-    .product-modal__info {
+    .product-modal__description {
       font-size: 15px;
       font-weight: 400;
       line-height: 18px;
@@ -142,4 +145,9 @@
     font-weight: 600;
     line-height: normal;
   }
+}
+
+.product-modal--open {
+  opacity: 1;
+  transform: translateX(0);
 }

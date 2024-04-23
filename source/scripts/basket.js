@@ -1,6 +1,3 @@
-
-
-
 const orderForm = document.querySelector("#order-form");
 
 const screenWidth = window.screen.width;

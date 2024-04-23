@@ -1,5 +1,4 @@
 .basket {
-  // position: static;
   display: flex;
   flex-direction: column;
   min-width: 300px;
@@ -12,10 +11,6 @@
   top: 0;
   left: 0;
   margin-top: 0;
-
-  .basket-header {
-    margin-bottom: 0px;
-  }
 
   .basket__wrapper {
     display: none;
@@ -35,28 +30,14 @@
   }
 }
 
-// Корзина под планшеты и мобилки
-// .basket-mobile {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   margin-top: 0;
-//   cursor: pointer;
-
-//   .basket-header {
-//     margin-bottom: 0px;
-//   }
-
-//   .basket__wrapper {
-//     display: none;
-//   }
-// }
-
 .basket-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 12px;
+
+  @media (min-width: $width-desktop) {
+    margin-bottom: 12px;
+  }
 }
 
 .basket-header__title {
