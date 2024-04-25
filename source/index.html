@@ -92,30 +92,6 @@
         </div>
         <div class="basket__wrapper">
           <ul class="basket__list">
-            <!-- <li class="basket__item">
-              <div class="thumbnails-product">
-                <div class="thumbnails-product__img">
-                  <img src="images/products/burgers/super-cheese-burger@1x.png" alt="Супер сырный бургер">
-                </div>
-                <div class="thumbnails-product__info">
-                  <input class="visually-hidden" type="text" name="product-name" id="product-name" value="Супер сырный">
-                  <span class="thumbnails-product__title">Супер сырный</span>
-                  <span class="thumbnails-product__weight">
-                    512г
-                  </span>
-                  <input class="visually-hidden" type="text" name="product-price" id="product-price" value="550₽">
-                  <span class="thumbnails-product__price">550₽</span>
-                </div>
-                <div class="thumbnails-product__control product-control">
-                  <div class="control-wrapper">
-                    <button class="control-decrease" type="button"></button>
-                    <input class="visually-hidden" type="text" name="product-counter" value="1">
-                    <span class="thumbnails-product__quantity">1</span>
-                    <button class="control-increase" type="button"></button>
-                  </div>
-                </div>
-              </div>
-            </li> -->
           </ul>
           <div class="basket-result">
             <span class="basket-result__title">Итого</span>
@@ -183,7 +159,7 @@
 
 
   <div class="modal-wrapper">
-    <div class="product-modal" data="modal-product-id">
+    <div class="product-modal" data-modal-product-id="">
       <div class="product-modal__header">
         <span class="product-modal__title"></span>
         <button class="product-modal__close-button" type="button"></button>
@@ -208,8 +184,9 @@
         <div class="product-modal__control product-control">
           <div class="control-wrapper">
             <button class="control-decrease" type="button"></button>
-            <input class="visually-hidden" type="text" name="product-counter" value="" id="modal-product-input-counter">
-            <span class="product-modal__quantity"></span>
+            <input class="visually-hidden product-input-counter" type="text" name="product-counter" value=""
+              id="modal-product-input-counter">
+            <span class="product-modal__quantity product-quantity"></span>
             <button class="control-increase" type="button"></button>
           </div>
         </div>
@@ -239,8 +216,8 @@
 
 
   <template id="basket-product" name="basket-product">
-    <li class="basket__item" data="basket-product-id">
-      <div class="thumbnails-product">
+    <li class="basket__item">
+      <div class="thumbnails-product" data-basket-product-id="">
         <div class="thumbnails-product__img">
           <img src="" alt="">
         </div>
@@ -255,8 +232,8 @@
         <div class="thumbnails-product__control product-control">
           <div class="control-wrapper">
             <button class="control-decrease" type="button"></button>
-            <input class="visually-hidden" type="text" name="product-counter" value="1">
-            <span class="thumbnails-product__quantity"></span>
+            <input class="visually-hidden product-input-counter" type="text" name="product-counter" value="">
+            <span class="product-quantity thumbnails-product__quantity"></span>
             <button class="control-increase" type="button"></button>
           </div>
         </div>
