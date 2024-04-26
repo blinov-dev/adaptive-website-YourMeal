@@ -1,7 +1,6 @@
-import {
-  productQuantityDefault,
-  productControlActive,
-} from "./product-quantity.js";
+import { changeProductQuantity } from "./product-quantity.js";
+
+import { productAddToBasket } from "./adding-item-to-basket.js";
 
 const modalWrapper = document.querySelector(".modal-wrapper");
 const modalCloseButton = document.querySelector(".product-modal__close-button");
@@ -46,11 +45,10 @@ function modalOpen() {
   modalWrapper.querySelector(".product-modal__price").textContent =
     selectedProduct.querySelector(".product__price").textContent;
 
-  productControlActive();
+  changeProductQuantity();
 }
 
 function modalClose() {
-  productQuantityDefault();
   body.classList.remove("modal-open");
   modalWrapper.classList.remove("product-modal--open");
   modalCloseButton.removeEventListener("click", modalClose);
@@ -63,57 +61,6 @@ productButton.forEach(function (item) {
 //
 //Добавление товара в корзину
 
-function productAddToBasket() {
-  const basketProductsList = document.querySelector(".basket__list");
-  const basketTemplateFragment =
-    document.querySelector("#basket-product").content;
-  const basketTemplate = basketTemplateFragment.querySelector(".basket__item");
-
-  const basketFragment = document.createDocumentFragment();
-  const basketProduct = basketTemplate.cloneNode(true);
-
-  basketProduct.querySelector(".thumbnails-product").dataset.basketProductId =
-    modalWrapper.querySelector(".product-modal").dataset.modalProductId;
-
-  basketProduct.querySelector(".thumbnails-product__img").children[0].src =
-    modalWrapper.querySelector(".product-modal__img").children[0].src;
-
-  // basketProduct.querySelector(".product-quantity").textContent =
-  //   modalWrapper.querySelector(".product-quantity").textContent;
-
-  // basketProduct.querySelector(".product-input-counter").value =
-  //   modalWrapper.querySelector(".product-input-counter").value;
-
-  // product-modal__quantity
-
-  // modalWrapper.querySelector(".product-modal__img").children[0].alt =
-  //   selectedProduct.querySelector(".product__title").textContent;
-
-  // modalWrapper.querySelector(".product-modal__title").textContent =
-  //   selectedProduct.querySelector(".product__title").textContent;
-  // modalWrapper.querySelector(".product-modal__description").textContent =
-  //   selectedProduct.querySelector(".product__description").textContent;
-  // if (
-  //   basketProduct.querySelector(".thumbnails-product").dataset
-  //     .basketProductId ===
-  //   modalWrapper.querySelector(".product-modal").dataset.modalProductId
-  // ) {
-  // }
-
-  basketFragment.appendChild(basketProduct);
-
-  basketProductsList.appendChild(basketFragment);
-  modalClose();
-  productControlActive();
-}
-
 modalProductButton.addEventListener("click", productAddToBasket);
 
-// Закончил здесь
-
-// const basketProductsList = document.querySelector(".basket__list");
-// const basketProductsItem = document.querySelector(".basket__item");
-// if (basketProductsList.contains(basketProductsItem)) {
-//   console.log(123);
-
-// }
+export { modalClose };

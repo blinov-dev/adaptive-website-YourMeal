@@ -1,41 +1,39 @@
-// const basketList = document.querySelector(".basket__list");
-// const basketTemplateFragment =
-//   document.querySelector("#catalog-product").content;
-// const productTemplate =
-//   productTemplateFragment.querySelector(".products__item");
-// const productsFragment = document.createDocumentFragment();
+import { modalClose } from "./product-modal.js";
 
-// function createProduct(products) {
-//   products.forEach((product) => {
-//     const catalogProduct = productTemplate.cloneNode(true);
+function productAddToBasket() {
+  const modalWrapper = document.querySelector(".modal-wrapper");
+  const basketProductsList = document.querySelector(".basket__list");
+  const basketTemplateFragment =
+    document.querySelector("#basket-product").content;
+  const basketTemplate = basketTemplateFragment.querySelector(".basket__item");
 
-//     catalogProduct.querySelector(".product__img").children[0].src =
-//       `images/products/${product.category}/` + product.image;
+  const basketFragment = document.createDocumentFragment();
+  const basketProduct = basketTemplate.cloneNode(true);
 
-//     catalogProduct.querySelector(".product__img").children[0].alt =
-//       product.title;
-//     catalogProduct.querySelector(".product__price").textContent =
-//       product.price + `₽`;
-//     catalogProduct.querySelector(".product__title").textContent = product.title;
-//     catalogProduct.querySelector(".product__weight").textContent =
-//       product.weight;
+  let basketProductId = basketProduct.querySelector(".thumbnails-product")
+    .dataset.basketProductId;
 
-//     if (product.isAvailable) {
-//       catalogProduct
-//         .querySelector(".product__button")
-//         .removeAttribute("disabled", "disabled");
-//       catalogProduct.querySelector(".product__button").textContent = `Добавить`;
-//     } else {
-//       catalogProduct.querySelector(
-//         ".product__button"
-//       ).textContent = `Нет в наличии`;
-//       catalogProduct
-//         .querySelector(".product__button")
-//         .setAttribute("disabled", "disabled");
-//     }
+  basketProductId =
+    modalWrapper.querySelector(".product-modal").dataset.modalProductId;
 
-//     productsFragment.appendChild(catalogProduct);
-//   });
+  basketProduct.querySelector(".thumbnails-product__img").children[0].src =
+    modalWrapper.querySelector(".product-modal__img").children[0].src;
 
-//   productsList.appendChild(productsFragment);
-// }
+  const modalProductQuantity =
+    modalWrapper.querySelector(".product-quantity").textContent;
+
+    console.log();
+
+  basketProduct.querySelector(".product-quantity").textContent =
+    modalProductQuantity;
+
+  basketFragment.appendChild(basketProduct);
+
+  basketProductsList.appendChild(basketFragment);
+
+  // console.log(basketProductId);
+  console.log(basketProduct.querySelector(".product-quantity").textContent);
+  modalClose();
+}
+
+export { productAddToBasket };
