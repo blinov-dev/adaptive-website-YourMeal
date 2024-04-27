@@ -2,8 +2,6 @@ import { modalClose } from "./product-modal.js";
 import { changeBasketProductQuantity } from "./product-quantity.js";
 import { basket } from "./basket.js";
 
-console.log(basket);
-
 function productPushToBasket(basketProductId) {
   basket.push(basketProductId);
   console.log(basket);

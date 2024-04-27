@@ -62,12 +62,6 @@ function changeBasketProductQuantity(
   controlInput.value = currentValue;
   productQuantity.textContent = controlInput.value;
 
-  // if (currentValue > PRODUCT_QUANTITY_DEFAULT) {
-  //   controlButtonDecrease.removeAttribute("disabled", "disabled");
-  // } else {
-  //   controlButtonDecrease.setAttribute("disabled", "disabled");
-  // }
-
   controlButtonDecrease.addEventListener(
     "click",
     decreaseBasketProductQuantity

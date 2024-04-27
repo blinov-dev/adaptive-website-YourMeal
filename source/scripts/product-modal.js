@@ -23,18 +23,22 @@ function modalOpen() {
     selectedProduct.querySelector(".product__title").textContent;
   modalWrapper.querySelector(".product-modal__description").textContent =
     selectedProduct.querySelector(".product__description").textContent;
-  const productIngredientsList = selectedProduct.querySelectorAll(
-    ".composition-product__item"
-  );
-  for (let i = 0; i < productIngredientsList.length; i++) {
+
+  function getIngredientList() {
+    const productIngredientsList = selectedProduct.querySelectorAll(
+      ".composition-product__item"
+    );
     const modalProductIngredientsList = modalWrapper.querySelector(
       ".composition-product__list"
     );
-    let ingredient = productIngredientsList[i];
-    ingredient.classList.add("product__composition-item");
-    ingredient.classList.add("composition-product__item");
-    modalProductIngredientsList.appendChild(ingredient);
+    modalProductIngredientsList.innerHTML = "";
+    productIngredientsList.forEach(function (ingredient) {
+      const modalIngredient = ingredient.cloneNode(true);
+      modalProductIngredientsList.appendChild(modalIngredient);
+    });
   }
+  getIngredientList();
+
   modalWrapper.querySelector(".composition-product__weight").textContent =
     selectedProduct.querySelector(".product__weight").textContent;
   modalWrapper.querySelector(".product-modal__price").textContent =

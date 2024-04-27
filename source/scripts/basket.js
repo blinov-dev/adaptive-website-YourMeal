@@ -1,5 +1,4 @@
 const basketForm = document.querySelector("#order-form");
-const body = document.body;
 
 function mobileBasket() {
   const screenWidth = window.screen.width;

@@ -34,7 +34,7 @@ const products = [
       "Соус сырный",
       "Сыр Чеддер",
     ],
-    isAvailable: false,
+    isAvailable: true,
     weight: "512г, ккал 410",
   },
   {
