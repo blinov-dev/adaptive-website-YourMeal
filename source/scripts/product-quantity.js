@@ -1,15 +1,20 @@
-function changeProductQuantity() {
-  const controlButtonDecrease = document.querySelector(".control-decrease");
-  const controlButtonIncrease = document.querySelector(".control-increase");
-  const controlInput = document.querySelector(".product-input-counter");
-  let productQuantity = document.querySelector(".product-quantity");
+function changeModalProductQuantity() {
+  const productModal = document.querySelector(".product-modal");
+  const controlButtonDecrease = productModal.querySelector(".control-decrease");
+  const controlButtonIncrease = productModal.querySelector(".control-increase");
+  const controlInput = productModal.querySelector(".product-input-counter");
+  const productQuantity = productModal.querySelector(".product-quantity");
 
   const PRODUCT_QUANTITY_DEFAULT = 1;
   controlInput.value = PRODUCT_QUANTITY_DEFAULT;
   let currentValue = controlInput.value;
   productQuantity.textContent = currentValue;
 
-  controlButtonDecrease.setAttribute("disabled", "disabled");
+  function productQuantityDefault() {
+    controlInput.value = PRODUCT_QUANTITY_DEFAULT;
+    currentValue = controlInput.value;
+    productQuantity.textContent = currentValue;
+  }
 
   function decreaseProductQuantity() {
     if (currentValue - PRODUCT_QUANTITY_DEFAULT >= PRODUCT_QUANTITY_DEFAULT) {
@@ -17,12 +22,10 @@ function changeProductQuantity() {
       currentValue--;
       controlInput.value = currentValue;
       productQuantity.textContent = currentValue;
-      console.log(this);
     }
     if (currentValue === PRODUCT_QUANTITY_DEFAULT) {
       this.setAttribute("disabled", "disabled");
     }
-    console.log(currentValue);
     return currentValue;
   }
 
@@ -32,120 +35,77 @@ function changeProductQuantity() {
       currentValue++;
       controlInput.value = currentValue;
       productQuantity.textContent = currentValue;
+    }
+    return currentValue;
+  }
 
-      console.log(this);
+  productQuantityDefault();
+  controlButtonDecrease.setAttribute("disabled", "disabled");
+  controlButtonDecrease.addEventListener("click", decreaseProductQuantity);
+  controlButtonIncrease.addEventListener("click", increaseProductQuantity);
+}
+
+function changeBasketProductQuantity(
+  newValue,
+  basketProduct,
+  productInBasketButton
+) {
+  const controlButtonDecrease =
+    basketProduct.querySelector(".control-decrease");
+  const controlButtonIncrease =
+    basketProduct.querySelector(".control-increase");
+  const controlInput = basketProduct.querySelector(".product-input-counter");
+  const productQuantity = basketProduct.querySelector(".product-quantity");
+
+  const PRODUCT_QUANTITY_DEFAULT = 1;
+  let currentValue = newValue;
+  controlInput.value = currentValue;
+  productQuantity.textContent = controlInput.value;
+
+  // if (currentValue > PRODUCT_QUANTITY_DEFAULT) {
+  //   controlButtonDecrease.removeAttribute("disabled", "disabled");
+  // } else {
+  //   controlButtonDecrease.setAttribute("disabled", "disabled");
+  // }
+
+  controlButtonDecrease.addEventListener(
+    "click",
+    decreaseBasketProductQuantity
+  );
+  controlButtonIncrease.addEventListener(
+    "click",
+    increaseBasketProductQuantity
+  );
+
+  function decreaseBasketProductQuantity(evt) {
+    evt.stopPropagation();
+    if (currentValue - PRODUCT_QUANTITY_DEFAULT >= PRODUCT_QUANTITY_DEFAULT) {
+      this.removeAttribute("disabled", "disabled");
+      currentValue--;
+      controlInput.value = currentValue;
+      productQuantity.textContent = currentValue;
+    }
+    if (currentValue - PRODUCT_QUANTITY_DEFAULT === 0) {
+      basketProduct.remove();
+      productInBasketButton.removeAttribute("disabled", "disabled");
+      productInBasketButton.textContent = `Добавить`;
+      productInBasketButton.style.backgroundColor = "#f2f2f3";
     }
     console.log(currentValue);
     return currentValue;
   }
 
-  controlButtonDecrease.addEventListener("click", decreaseProductQuantity);
-  controlButtonIncrease.addEventListener("click", increaseProductQuantity);
+  function increaseBasketProductQuantity(evt) {
+    evt.stopPropagation();
+    controlButtonDecrease.removeAttribute("disabled", "disabled");
+    if (currentValue >= PRODUCT_QUANTITY_DEFAULT) {
+      currentValue++;
+      controlInput.value = currentValue;
+      productQuantity.textContent = currentValue;
+    }
+    console.log(currentValue);
+    return currentValue;
+  }
 }
 
-// function productQuantityDefault() {
-//   // const controlInput = document.querySelector(".product-input-counter");
-//   // let productQuantity = document.querySelector(".product-quantity");
-//   // // controlInput.value = PRODUCT_QUANTITY_DEFAULT;
-//   // // let currentValue = controlInput.value;
-//   // // productQuantity.textContent = currentValue;
-//   // console.log(controlInput.value);
-//   // console.log(currentValue);
-//   // console.log(productQuantity.textContent);
-
-//   const controlButtonDecrease = document.querySelector(".control-decrease");
-//   const controlButtonIncrease = document.querySelector(".control-increase");
-//   const controlInput = document.querySelector(".product-input-counter");
-//   let productQuantity = document.querySelector(".product-quantity");
-
-//   controlInput.value = PRODUCT_QUANTITY_DEFAULT;
-//   let currentValue = controlInput.value;
-//   productQuantity.textContent = currentValue;
-
-//   controlButtonDecrease.setAttribute("disabled", "disabled");
-
-//   function decreaseProductQuantity() {
-//     if (currentValue - PRODUCT_QUANTITY_DEFAULT >= PRODUCT_QUANTITY_DEFAULT) {
-//       this.removeAttribute("disabled", "disabled");
-//       currentValue--;
-//       controlInput.value = currentValue;
-//       productQuantity.textContent = currentValue;
-//     }
-//     if (currentValue === PRODUCT_QUANTITY_DEFAULT) {
-//       this.setAttribute("disabled", "disabled");
-//     }
-//     return currentValue;
-//   }
-
-//   function increaseProductQuantity() {
-//     controlButtonDecrease.removeAttribute("disabled", "disabled");
-//     if (currentValue >= PRODUCT_QUANTITY_DEFAULT) {
-//       currentValue++;
-//       controlInput.value = currentValue;
-//       productQuantity.textContent = currentValue;
-
-//       // console.log(this);
-//     }
-//     // console.log(currentValue);
-//     return currentValue;
-//   }
-
-//   controlButtonDecrease.addEventListener("click", decreaseProductQuantity);
-//   controlButtonIncrease.addEventListener("click", increaseProductQuantity);
-// }
-
-export { changeProductQuantity };
-// function decreaseProductQuantity() {
-//   controlButtonDecrease.forEach(function (item) {
-//     if (currentValue >= PRODUCT_QUANTITY_DEFAULT) {
-//       item.removeAttribute("disabled", "disabled");
-//       currentValue--;
-//       controlInput.forEach(function (element) {
-//         element.value = currentValue;
-//         console.log(element.value);
-//       });
-//     } else {
-//       item.setAttribute("disabled", "disabled");
-//     }
-//     // getProductQuantity();
-//     return currentValue;
-//   });
-// }
-
-// function increaseProductQuantity() {
-//   controlButtonIncrease.forEach(function (item) {
-//     if (currentValue >= PRODUCT_QUANTITY_DEFAULT) {
-//       currentValue++;
-//       controlInput.value = currentValue;
-//       // controlButtonDecrease.forEach(function (item) {
-//       //   item.setAttribute("disabled", "disabled");
-//       // });
-//     }
-//     if (currentValue >= 10) {
-//       item.setAttribute("disabled", "disabled");
-//     }
-//     // getProductQuantity();
-//     return currentValue;
-//   });
-// }
-
-// function productControlActive() {
-//   productQuantityDefault();
-//   // getProductQuantity();
-//   // controlButtonDecrease = document.querySelectorAll(".control-decrease");
-//   // controlButtonIncrease = document.querySelectorAll(".control-increase");
-//   // if ((currentValue = PRODUCT_QUANTITY_DEFAULT)) {
-//   //   controlButtonDecrease.setAttribute("disabled", "disabled");
-//   // }
-
-//   controlButtonDecrease.forEach(function (item) {
-//     item.addEventListener("click", decreaseProductQuantity);
-//   });
-//   controlButtonIncrease.forEach(function (item) {
-//     item.addEventListener("click", increaseProductQuantity);
-//   });
-// }
-
-// export { productQuantityDefault, productControlActive };
-
-// Надо все передалть!!!
+export { changeModalProductQuantity, changeBasketProductQuantity };

@@ -1,5 +1,6 @@
 import { renderProduct } from "./render-products";
 import { products } from "./data-products.js";
+import { addModalOpenEventToProductButton } from "./product-modal.js";
 const filterButton = document.querySelectorAll(".product-filter__button");
 const buttonFilteredBurgers = document.querySelector("#filter-button-burgers");
 
@@ -24,6 +25,7 @@ function selectFilter() {
           return element.category === "burgers";
         });
         renderProduct(filteredBurgers);
+        addModalOpenEventToProductButton();
         break;
       case "filter-button-snacks":
         clearProducts();
@@ -31,6 +33,7 @@ function selectFilter() {
           return element.category === "snacks";
         });
         renderProduct(filteredSnacks);
+        addModalOpenEventToProductButton();
         break;
       case "filter-button-hotdogs":
         clearProducts();
@@ -38,6 +41,7 @@ function selectFilter() {
           return element.category === "hotdogs";
         });
         renderProduct(filteredHotdogs);
+        addModalOpenEventToProductButton();
         break;
     }
   }
