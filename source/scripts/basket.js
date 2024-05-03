@@ -17,8 +17,8 @@ const clearBasketLabel = document.querySelector(".basket__empty");
 
 const basket = [];
 
-// basketInputCounter.value = basket.length;
-// basketCounter.textContent = basketInputCounter.value;
+basketInputCounter.value = basket.length;
+basketCounter.textContent = basketInputCounter.value;
 
 // if (!basket.length) {
 //   basketForm.classList.add("basket--clear");
@@ -32,6 +32,18 @@ const basket = [];
 //   clearBasketLabel.classList.remove("visually-hidden");
 // } else {
 //   clearBasketLabel.classList.add("visually-hidden");
-//}
+// }
+
+
+
+
 
 export { basket };
+
+/* ЗАДАЧИ и ВОПРОСЫ
+1) Суммировать стоимость в модалке при + - количестве товаров
+2) В корзине проверить изменение количества товаров не должно удаляться на 1
+3) Настроить суммирвоание общей стоимости корзины
+4) Общий счетчик на общее кол-во товаров
+5) После нажатия на кнопку другого фильтра, сбрасываются стили уже добавленных товаров
+*/

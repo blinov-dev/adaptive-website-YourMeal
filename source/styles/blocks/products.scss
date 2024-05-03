@@ -9,6 +9,11 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
   }
 }
+// .products__item {
+//   opacity: 1;
+//   transition: opacity 0.5s ease;
+// }
+
 .product {
   display: flex;
   flex-direction: column;
@@ -75,4 +80,12 @@
     cursor: none;
     pointer-events: none;
   }
+}
+
+.selected {
+  display: block;
+}
+
+.not-selected {
+  display: none;
 }

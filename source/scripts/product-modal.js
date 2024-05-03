@@ -41,11 +41,16 @@ function modalOpen() {
 
   modalWrapper.querySelector(".composition-product__weight").textContent =
     selectedProduct.querySelector(".product__weight").textContent;
+
   modalWrapper.querySelector(".product-modal__price").textContent =
     selectedProduct.querySelector(".product__price").textContent;
 
+  const modalProductPrice = modalWrapper.querySelector(".product-modal__price");
+
+
   modalProductButton.addEventListener("click", productAddToBasket);
-  changeModalProductQuantity();
+
+  changeModalProductQuantity(modalProductPrice);
 }
 
 function modalClose() {

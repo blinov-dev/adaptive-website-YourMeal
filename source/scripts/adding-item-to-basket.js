@@ -3,9 +3,29 @@ import { changeBasketProductQuantity } from "./product-quantity.js";
 import { basket } from "./basket.js";
 
 function productPushToBasket(basketProductId) {
-  basket.push(basketProductId);
-  console.log(basket);
+  const basketCounter = document.querySelector(".basket-header__counter");
+  const basketInputCounter = document.querySelector("#basket-counter-input");
+
+  const basketForm = document.querySelector("#order-form");
+  const basketQuantity = basketForm.querySelectorAll(".product-quantity");
+
+  // basketQuantity.forEach((basketProduct) => {
+  //   console.log(basketProduct);
+  // });
+
+  // basket.push(basketProductId);
+
+  // basketInputCounter.value = basket.length;
+  // basketCounter.textContent = basketInputCounter.value;
+  // console.log(basket);
+  // console.log(basket.length);
 }
+
+// function productDelInBasket(basketProductId) {
+//   basket.push(basketProductId);
+//   console.log(basket);
+//   console.log(basket.length);
+// }
 
 function productAddToBasket() {
   const modalWrapper = document.querySelector(".modal-wrapper");
@@ -20,6 +40,15 @@ function productAddToBasket() {
     modalWrapper.querySelector(".product-modal").dataset.modalProductId;
   basketProduct.querySelector(".thumbnails-product__img").children[0].src =
     modalWrapper.querySelector(".product-modal__img").children[0].src;
+
+  basketProduct.querySelector(".thumbnails-product__title").textContent =
+    modalWrapper.querySelector(".product-modal__title").textContent;
+
+  basketProduct.querySelector(".thumbnails-product__weight").textContent =
+    modalWrapper.querySelector(".composition-product__weight").textContent;
+
+  basketProduct.querySelector(".thumbnails-product__price").textContent =
+    modalWrapper.querySelector(".product-modal__price").textContent;
 
   basketProduct.querySelector(".product-quantity").textContent =
     modalWrapper.querySelector(".product-quantity").textContent;
@@ -51,6 +80,13 @@ function productAddToBasket() {
   productInBasketButton.setAttribute("disabled", "disabled");
   productInBasketButton.textContent = `В корзине`;
   productInBasketButton.style.backgroundColor = "rgba(248, 99, 16, 1)";
+
+  const productValue = basketProduct.querySelector(
+    ".thumbnails-product__price"
+  ).textContent;
+  const productInputValue = productValue.slice(0, -1);
+  basketProduct.querySelector(".product-input-price").value = productInputValue;
+
   modalClose();
   productPushToBasket(basketProductId);
   basketProductQuantity(productInBasketButton);
@@ -61,8 +97,21 @@ function basketProductQuantity(productInBasketButton) {
 
   basketProductsList.forEach((basketProduct) => {
     let newValue = basketProduct.querySelector(".product-quantity").textContent;
+    let inputProductValue = basketProduct.querySelector(
+      ".product-input-price"
+    ).value;
 
-    changeBasketProductQuantity(newValue, basketProduct, productInBasketButton);
+    let basketPrice = document.querySelector(
+      ".basket-result__value"
+    ).textContent;
+
+    changeBasketProductQuantity(
+      newValue,
+      basketProduct,
+      productInBasketButton,
+      inputProductValue,
+      basketPrice,
+    );
   });
 }
 

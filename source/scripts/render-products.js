@@ -9,6 +9,9 @@ function createProduct(products) {
   products.forEach((product) => {
     const catalogProduct = productTemplate.cloneNode(true);
 
+    catalogProduct.querySelector(".product").dataset.productCategory =
+      product.category;
+
     catalogProduct.querySelector(".product").dataset.productId = product.id;
     catalogProduct.querySelector(".product__img").children[0].src =
       `images/products/${product.category}/` + product.image;

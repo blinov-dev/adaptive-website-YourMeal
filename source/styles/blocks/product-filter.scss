@@ -35,47 +35,52 @@
     height: 24px;
   }
 }
-#filter-button-burgers {
+#all {
+  &::before {
+    background-color: black;
+  }
+}
+#burgers {
   &::before {
     background-image: url("/images/product-filter/burger-icon@1x.png");
   }
 }
-#filter-button-snacks {
+#snacks {
   &::before {
     background-image: url("/images/product-filter/snacks-icon@1x.png");
   }
 }
-#filter-button-hotdogs {
+#hotdogs {
   &::before {
     background-image: url("/images/product-filter/hotdog-icon@1x.png");
   }
 }
-#filter-button-combo {
+#combo {
   &::before {
     background-image: url("/images/product-filter/combo-icon@1x.png");
   }
 }
-#filter-button-shawarma {
+#shawarma {
   &::before {
     background-image: url("/images/product-filter/shawarma-icon@1x.png");
   }
 }
-#filter-button-pizza {
+#pizza {
   &::before {
     background-image: url("/images/product-filter/pizza-icon@1x.png");
   }
 }
-#filter-button-wok {
+#wok {
   &::before {
     background-image: url("/images/product-filter/wok-icon@1x.png");
   }
 }
-#filter-button-desserts {
+#desserts {
   &::before {
     background-image: url("/images/product-filter/dessert-icon@1x.png");
   }
 }
-#filter-button-sauces {
+#sauces {
   &::before {
     background-image: url("/images/product-filter/sauces-icon@1x.png");
   }

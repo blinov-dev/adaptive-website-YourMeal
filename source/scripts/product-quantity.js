@@ -48,7 +48,9 @@ function changeModalProductQuantity() {
 function changeBasketProductQuantity(
   newValue,
   basketProduct,
-  productInBasketButton
+  productInBasketButton,
+  inputProductValue,
+  basketPrice
 ) {
   const controlButtonDecrease =
     basketProduct.querySelector(".control-decrease");
@@ -56,6 +58,13 @@ function changeBasketProductQuantity(
     basketProduct.querySelector(".control-increase");
   const controlInput = basketProduct.querySelector(".product-input-counter");
   const productQuantity = basketProduct.querySelector(".product-quantity");
+
+  // basketPrice.textContent = inputProductValue;
+
+  // console.log(basketPrice);
+  // console.log(inputProductValue);
+
+  // Остановился здесь. Необходимо настроить вывод общей суммы
 
   const PRODUCT_QUANTITY_DEFAULT = 1;
   let currentValue = newValue;
