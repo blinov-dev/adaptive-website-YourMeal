@@ -1,30 +1,26 @@
 import { modalClose } from "./product-modal.js";
 import { changeBasketProductQuantity } from "./product-quantity.js";
-import { basket } from "./basket.js";
+import { calcProductInBasketPrice } from "./basket.js";
 
-function productPushToBasket(basketProductId) {
-  const basketCounter = document.querySelector(".basket-header__counter");
-  const basketInputCounter = document.querySelector("#basket-counter-input");
+// function calcProductInBasketPrice() {
+//   const basketProducts = document.querySelectorAll(".basket__item");
+//   const basketResult = document.querySelector(".basket-result__value");
 
-  const basketForm = document.querySelector("#order-form");
-  const basketQuantity = basketForm.querySelectorAll(".product-quantity");
+//   let totalPrice = 0;
 
-  // basketQuantity.forEach((basketProduct) => {
-  //   console.log(basketProduct);
-  // });
+//   basketProducts.forEach((basketProduct) => {
+//     const productCounter = basketProduct.querySelector(
+//       ".thumbnails-product__quantity"
+//     ).textContent;
+//     const productPrice = basketProduct.querySelector(
+//       ".thumbnails-product__price"
+//     ).textContent;
+//     const productPriceInt = productPrice.slice(0, productPrice.length - 1);
 
-  // basket.push(basketProductId);
-
-  // basketInputCounter.value = basket.length;
-  // basketCounter.textContent = basketInputCounter.value;
-  // console.log(basket);
-  // console.log(basket.length);
-}
-
-// function productDelInBasket(basketProductId) {
-//   basket.push(basketProductId);
-//   console.log(basket);
-//   console.log(basket.length);
+//     const productInBasketPrice = productCounter * productPriceInt;
+//     totalPrice += productInBasketPrice;
+//   });
+//   basketResult.textContent = totalPrice + `₽`;
 // }
 
 function productAddToBasket() {
@@ -88,8 +84,9 @@ function productAddToBasket() {
   basketProduct.querySelector(".product-input-price").value = productInputValue;
 
   modalClose();
-  productPushToBasket(basketProductId);
   basketProductQuantity(productInBasketButton);
+
+  calcProductInBasketPrice();
 }
 
 function basketProductQuantity(productInBasketButton) {
@@ -97,22 +94,9 @@ function basketProductQuantity(productInBasketButton) {
 
   basketProductsList.forEach((basketProduct) => {
     let newValue = basketProduct.querySelector(".product-quantity").textContent;
-    let inputProductValue = basketProduct.querySelector(
-      ".product-input-price"
-    ).value;
 
-    let basketPrice = document.querySelector(
-      ".basket-result__value"
-    ).textContent;
-
-    changeBasketProductQuantity(
-      newValue,
-      basketProduct,
-      productInBasketButton,
-      inputProductValue,
-      basketPrice,
-    );
+    changeBasketProductQuantity(newValue, basketProduct, productInBasketButton);
   });
 }
 
-export { productAddToBasket };
+export { productAddToBasket, calcProductInBasketPrice };

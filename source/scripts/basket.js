@@ -11,6 +11,27 @@ function mobileBasket() {
 }
 mobileBasket();
 
+function calcProductInBasketPrice() {
+  const basketProducts = document.querySelectorAll(".basket__item");
+  const basketResult = document.querySelector(".basket-result__value");
+
+  let totalPrice = 0;
+
+  basketProducts.forEach((basketProduct) => {
+    const productCounter = basketProduct.querySelector(
+      ".thumbnails-product__quantity"
+    ).textContent;
+    const productPrice = basketProduct.querySelector(
+      ".thumbnails-product__price"
+    ).textContent;
+    const productPriceInt = productPrice.slice(0, productPrice.length - 1);
+
+    const productInBasketPrice = productCounter * productPriceInt;
+    totalPrice += productInBasketPrice;
+  });
+  basketResult.textContent = totalPrice + `₽`;
+}
+
 const basketCounter = document.querySelector(".basket-header__counter");
 const basketInputCounter = document.querySelector("#basket-counter-input");
 const clearBasketLabel = document.querySelector(".basket__empty");
@@ -34,11 +55,7 @@ basketCounter.textContent = basketInputCounter.value;
 //   clearBasketLabel.classList.add("visually-hidden");
 // }
 
-
-
-
-
-export { basket };
+export { calcProductInBasketPrice, basket };
 
 /* ЗАДАЧИ и ВОПРОСЫ
 1) Суммировать стоимость в модалке при + - количестве товаров

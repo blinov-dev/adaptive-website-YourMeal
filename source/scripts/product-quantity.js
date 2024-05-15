@@ -1,3 +1,5 @@
+import { calcProductInBasketPrice } from "./basket.js";
+
 function changeModalProductQuantity() {
   const productModal = document.querySelector(".product-modal");
   const controlButtonDecrease = productModal.querySelector(".control-decrease");
@@ -48,9 +50,7 @@ function changeModalProductQuantity() {
 function changeBasketProductQuantity(
   newValue,
   basketProduct,
-  productInBasketButton,
-  inputProductValue,
-  basketPrice
+  productInBasketButton
 ) {
   const controlButtonDecrease =
     basketProduct.querySelector(".control-decrease");
@@ -58,13 +58,6 @@ function changeBasketProductQuantity(
     basketProduct.querySelector(".control-increase");
   const controlInput = basketProduct.querySelector(".product-input-counter");
   const productQuantity = basketProduct.querySelector(".product-quantity");
-
-  // basketPrice.textContent = inputProductValue;
-
-  // console.log(basketPrice);
-  // console.log(inputProductValue);
-
-  // Остановился здесь. Необходимо настроить вывод общей суммы
 
   const PRODUCT_QUANTITY_DEFAULT = 1;
   let currentValue = newValue;
@@ -82,19 +75,19 @@ function changeBasketProductQuantity(
 
   function decreaseBasketProductQuantity(evt) {
     evt.stopPropagation();
-    if (currentValue - PRODUCT_QUANTITY_DEFAULT >= PRODUCT_QUANTITY_DEFAULT) {
-      this.removeAttribute("disabled", "disabled");
-      currentValue--;
-      controlInput.value = currentValue;
-      productQuantity.textContent = currentValue;
-    }
     if (currentValue - PRODUCT_QUANTITY_DEFAULT === 0) {
       basketProduct.remove();
       productInBasketButton.removeAttribute("disabled", "disabled");
       productInBasketButton.textContent = `Добавить`;
       productInBasketButton.style.backgroundColor = "#f2f2f3";
     }
-    console.log(currentValue);
+    if (currentValue - PRODUCT_QUANTITY_DEFAULT >= PRODUCT_QUANTITY_DEFAULT) {
+      this.removeAttribute("disabled", "disabled");
+      currentValue--;
+      controlInput.value = currentValue;
+      productQuantity.textContent = currentValue;
+    }
+    calcProductInBasketPrice();
     return currentValue;
   }
 
@@ -106,7 +99,7 @@ function changeBasketProductQuantity(
       controlInput.value = currentValue;
       productQuantity.textContent = currentValue;
     }
-    console.log(currentValue);
+    calcProductInBasketPrice();
     return currentValue;
   }
 }
