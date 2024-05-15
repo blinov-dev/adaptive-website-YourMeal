@@ -11,6 +11,27 @@ function mobileBasket() {
 }
 mobileBasket();
 
+function clearBasket() {
+  const basket = document.querySelector(".basket");
+  const basketProducts = document.querySelectorAll(".basket__item");
+  if (basketProducts.length === 0) {
+    basket.classList.add("basket--clear");
+  } else {
+    basket.classList.remove("basket--clear");
+  }
+}
+clearBasket();
+
+function basketTypeDelivery(totalPrice, basketProducts) {
+  const basketTypeDelivery = document.querySelector(".basket__type-delivery");
+  if (totalPrice >= 1000 && basketProducts.length > 0) {
+    basketTypeDelivery.textContent = "Бесплатная доставка";
+  } else {
+    basketTypeDelivery.textContent = "Платная доставка 250₽";
+  }
+}
+//basket__type-delivery--select
+
 function calcProductInBasketPrice() {
   const basketProducts = document.querySelectorAll(".basket__item");
   const basketResult = document.querySelector(".basket-result__value");
@@ -30,32 +51,26 @@ function calcProductInBasketPrice() {
     totalPrice += productInBasketPrice;
   });
   basketResult.textContent = totalPrice + `₽`;
+  clearBasket();
+  calcBasketCounter();
+  basketTypeDelivery(totalPrice, basketProducts);
 }
 
-const basketCounter = document.querySelector(".basket-header__counter");
-const basketInputCounter = document.querySelector("#basket-counter-input");
-const clearBasketLabel = document.querySelector(".basket__empty");
+function calcBasketCounter() {
+  const basketCounter = document.querySelector(".basket-header__counter");
+  const basketProductsQuantity = document.querySelectorAll(
+    ".thumbnails-product__quantity"
+  );
 
-const basket = [];
+  let totalQuantity = 0;
 
-basketInputCounter.value = basket.length;
-basketCounter.textContent = basketInputCounter.value;
+  basketProductsQuantity.forEach((productsQuantity) => {
+    totalQuantity += parseInt(productsQuantity.textContent);
+  });
+  basketCounter.textContent = totalQuantity;
+}
 
-// if (!basket.length) {
-//   basketForm.classList.add("basket--clear");
-//   basketForm.classList.add("basket--empty");
-// } else {
-//   basketForm.classList.remove("basket--clear");
-//   basketForm.classList.remove("basket--empty");
-// }
-
-// if (basketForm.classList.contains("basket--clear")) {
-//   clearBasketLabel.classList.remove("visually-hidden");
-// } else {
-//   clearBasketLabel.classList.add("visually-hidden");
-// }
-
-export { calcProductInBasketPrice, basket };
+export { calcProductInBasketPrice };
 
 /* ЗАДАЧИ и ВОПРОСЫ
 1) Суммировать стоимость в модалке при + - количестве товаров

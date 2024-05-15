@@ -2,27 +2,6 @@ import { modalClose } from "./product-modal.js";
 import { changeBasketProductQuantity } from "./product-quantity.js";
 import { calcProductInBasketPrice } from "./basket.js";
 
-// function calcProductInBasketPrice() {
-//   const basketProducts = document.querySelectorAll(".basket__item");
-//   const basketResult = document.querySelector(".basket-result__value");
-
-//   let totalPrice = 0;
-
-//   basketProducts.forEach((basketProduct) => {
-//     const productCounter = basketProduct.querySelector(
-//       ".thumbnails-product__quantity"
-//     ).textContent;
-//     const productPrice = basketProduct.querySelector(
-//       ".thumbnails-product__price"
-//     ).textContent;
-//     const productPriceInt = productPrice.slice(0, productPrice.length - 1);
-
-//     const productInBasketPrice = productCounter * productPriceInt;
-//     totalPrice += productInBasketPrice;
-//   });
-//   basketResult.textContent = totalPrice + `₽`;
-// }
-
 function productAddToBasket() {
   const modalWrapper = document.querySelector(".modal-wrapper");
   const basketProductsList = document.querySelector(".basket__list");
