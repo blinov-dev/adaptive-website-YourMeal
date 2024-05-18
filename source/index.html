@@ -199,6 +199,52 @@
     </div>
   </div>
 
+  <div class="form-wrapper form--open">
+    <form class="form">
+      <fieldset class="form-preview">
+        <legend class="visually-hidden">Превью с картинкой</legend>
+        <div class="preview__img">
+          <img src="images/form/form-preview@1x.png" alt="Пончик">
+        </div>
+      </fieldset>
+      <fieldset class="form-info">
+        <span class="form-info__header">
+          <legend class="form-info__title">Доставка</legend>
+          <button class="form-info__close-button" type="button"></button>
+        </span>
+        <span class="form-info__controls">
+          <input class="form-info__input" type="text" placeholder="Ваше имя" name="form-name">
+          <input class="form-info__input" type="tel" placeholder="Телефон" name="form-tel">
+
+
+
+          <span class="form-info__radio">
+            <label class="form-info__radio-label">
+              <input class="visually-hidden" type="radio" name="delivery" value="Доставка">
+              <span class="form-info__radio-mark"></span>
+              <span class="form-info__radio-info">Доставка</span>
+            </label>
+            <label class="form-info__radio-label">
+              <input class="visually-hidden" type="radio" name="delivery" value="Самовывоз" checked>
+              <span class="form-info__radio-mark"></span>
+              <span class="form-info__radio-info">Самовывоз</span>
+            </label>
+          </span>
+
+          <input class="form-info__input" type="text" placeholder="Улица, дом, квартира">
+
+          <span class="form-info__houes-info">
+            <input class="form-info__input" type="text" placeholder="'Этаж'">
+            <input class="form-info__input" type="text" placeholder="Домофон">
+          </span>
+        </span>
+      </fieldset>
+      <button class="form-info__button" type="submit">Отправить</button>
+    </form>
+  </div>
+
+
+
   <template id="catalog-product" name="catalog-product">
     <li class="products__item">
       <div class="product" data-product-id="">

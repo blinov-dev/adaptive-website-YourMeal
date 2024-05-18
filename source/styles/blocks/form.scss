@@ -1,0 +1,146 @@
+.form-wrapper {
+  position: fixed;
+  z-index: $z-index-level-three;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateX(-100%);
+}
+.form {
+  @include absolute-position-center-element;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 684px;
+  max-height: min-content;
+  z-index: $z-index-level-four;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+.form--open {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.form-preview {
+  background-color: $main-color;
+  padding: 34px 24px;
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+  border: none;
+  box-sizing: border-box;
+}
+
+.form-info {
+  display: flex;
+  flex-direction: column;
+  background-color: $page-color;
+  padding: 24px;
+  border-top-right-radius: 24px;
+  border-bottom-right-radius: 24px;
+  border: none;
+  box-sizing: border-box;
+
+  .form-info__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    .form-info__title {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+    .form-info__close-button {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      &::before,
+      &::after {
+        content: "";
+        @include absolute-position-center-element;
+        width: 100%;
+        height: 1px;
+        background-color: $dark-grey-color;
+        transition: background-color 0.5s ease;
+      }
+      &::before {
+        transform: rotate(-45deg);
+      }
+      &::after {
+        transform: rotate(45deg);
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          background-color: $additional-color;
+        }
+      }
+    }
+  }
+
+  .form-info__controls {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    .form-info__input {
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid $grey-color;
+      &::placeholder {
+        font-family: Nunito;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15.6px;
+        color: $dark-grey-color;
+      }
+    }
+
+    .form-info__radio {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      .form-info__radio-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .form-info__radio-mark {
+          position: relative;
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          border: 1px solid $grey-color;
+          background-color: $white-color;
+          &::after {
+            content: "";
+            @include absolute-position-center-element;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: transparent;
+            transition: background-color 0.5s ease;
+          }
+        }
+
+        .form-info__radio-info {
+          font-family: Nunito;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 16.37px;
+        }
+
+        input:checked + .form-info__radio-mark {
+          &::after {
+            background-color: $black-color;
+            transition: background-color 1s ease;
+          }
+        }
+      }
+    }
+  }
+}
