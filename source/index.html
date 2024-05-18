@@ -89,10 +89,11 @@
       </ul>
     </div>
     <section class="catalog">
-      <form class="basket" id="order-form">
+      <form class="basket" id="order-form" enctype="multipart/form-data" method="post" onsubmit="submitForm(event)"
+        action="send.php">
         <div class="basket-header">
           <h3 class="basket-header__title">Корзина</h3>
-          <input class="visually-hidden" type="text" name="basket-counter" id="basket-counter-input" value="">
+          <!-- <input class="visually-hidden" type="text" name="basket-counter" id="basket-counter-input" value=""> -->
           <span class="basket-header__counter">0</span>
         </div>
         <div class="basket__wrapper">
@@ -104,12 +105,12 @@
             <span class="basket-result__value"></span>
           </div>
           <button class="basket__submit" type="submit">Оформить заказ</button>
-
           <div class="type-delivery">
             <span class="basket__type-delivery"></span>
             <span class="basket__empty">Тут пока пусто :(</span>
           </div>
         </div>
+        <input class="visually-hidden" type="text" name="form-result" id="form-result" value="">
       </form>
       <div class="products">
         <h2 class="products__title">Бургеры</h2>

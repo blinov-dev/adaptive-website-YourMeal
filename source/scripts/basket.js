@@ -1,4 +1,7 @@
+import { calcBasketInfo } from "./basket-form.js";
+
 const basketForm = document.querySelector("#order-form");
+
 
 function mobileBasket() {
   const screenWidth = window.screen.width;
@@ -30,11 +33,11 @@ function basketTypeDelivery(totalPrice, basketProducts) {
     basketTypeDelivery.textContent = "Платная доставка 250₽";
   }
 }
-//basket__type-delivery--select
 
 function calcProductInBasketPrice() {
   const basketProducts = document.querySelectorAll(".basket__item");
   const basketResult = document.querySelector(".basket-result__value");
+  let basketResultInput = document.querySelector("#basket-result-input").value;
 
   let totalPrice = 0;
 
@@ -48,12 +51,18 @@ function calcProductInBasketPrice() {
     const productPriceInt = productPrice.slice(0, productPrice.length - 1);
 
     const productInBasketPrice = productCounter * productPriceInt;
+    let productSumValueInput =
+      document.querySelector(".product-sum-value").value;
+    productSumValueInput += productInBasketPrice;
+
     totalPrice += productInBasketPrice;
   });
   basketResult.textContent = totalPrice + `₽`;
+  basketResultInput = basketResult.textContent;
   clearBasket();
   calcBasketCounter();
   basketTypeDelivery(totalPrice, basketProducts);
+  calcBasketInfo(basketResultInput);
 }
 
 function calcBasketCounter() {
@@ -71,11 +80,3 @@ function calcBasketCounter() {
 }
 
 export { calcProductInBasketPrice };
-
-/* ЗАДАЧИ и ВОПРОСЫ
-1) Суммировать стоимость в модалке при + - количестве товаров
-2) В корзине проверить изменение количества товаров не должно удаляться на 1
-3) Настроить суммирвоание общей стоимости корзины
-4) Общий счетчик на общее кол-во товаров
-5) После нажатия на кнопку другого фильтра, сбрасываются стили уже добавленных товаров
-*/

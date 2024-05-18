@@ -19,6 +19,10 @@ function productAddToBasket() {
   basketProduct.querySelector(".thumbnails-product__title").textContent =
     modalWrapper.querySelector(".product-modal__title").textContent;
 
+  basketProduct.querySelector(".product-input-name").value =
+    basketProduct.querySelector(".thumbnails-product__title").textContent;
+
+
   basketProduct.querySelector(".thumbnails-product__weight").textContent =
     modalWrapper.querySelector(".composition-product__weight").textContent;
 
