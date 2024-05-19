@@ -1,5 +1,4 @@
 import { changeModalProductQuantity } from "./product-quantity.js";
-
 import { productAddToBasket } from "./adding-item-to-basket.js";
 
 const modalWrapper = document.querySelector(".modal-wrapper");
@@ -45,12 +44,11 @@ function modalOpen() {
   modalWrapper.querySelector(".product-modal__price").textContent =
     selectedProduct.querySelector(".product__price").textContent;
 
-  const modalProductPrice = modalWrapper.querySelector(".product-modal__price");
-
+  // const modalProductPrice = modalWrapper.querySelector(".product-modal__price");
 
   modalProductButton.addEventListener("click", productAddToBasket);
 
-  changeModalProductQuantity(modalProductPrice);
+  changeModalProductQuantity();
 }
 
 function modalClose() {

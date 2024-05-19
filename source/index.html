@@ -89,8 +89,7 @@
       </ul>
     </div>
     <section class="catalog">
-      <form class="basket" id="order-form" enctype="multipart/form-data" method="post" onsubmit="submitForm(event)"
-        action="send.php">
+      <div class="basket">
         <div class="basket-header">
           <h3 class="basket-header__title">Корзина</h3>
           <!-- <input class="visually-hidden" type="text" name="basket-counter" id="basket-counter-input" value=""> -->
@@ -101,7 +100,6 @@
           </ul>
           <div class="basket-result">
             <span class="basket-result__title">Итого</span>
-            <input class="visually-hidden" type="text" name="basket-result" id="basket-result-input" value="">
             <span class="basket-result__value"></span>
           </div>
           <button class="basket__submit" type="submit">Оформить заказ</button>
@@ -110,8 +108,8 @@
             <span class="basket__empty">Тут пока пусто :(</span>
           </div>
         </div>
-        <input class="visually-hidden" type="text" name="form-result" id="form-result" value="">
-      </form>
+        <span class="visually-hidden" id="basket-result-value"></span>
+      </div>
       <div class="products">
         <h2 class="products__title">Бургеры</h2>
         <ul class="products__list">
@@ -189,7 +187,6 @@
         <div class="product-modal__control product-control">
           <div class="control-wrapper">
             <button class="control-decrease" type="button"></button>
-            <input class="visually-hidden product-input-counter" type="text" name="product-counter" value="">
             <span class="product-quantity"></span>
             <button class="control-increase" type="button"></button>
           </div>
@@ -199,11 +196,12 @@
     </div>
   </div>
 
-  <div class="form-wrapper form--open">
-    <form class="form">
+  <div class="form-wrapper">
+    <form class="form" id="order-form" enctype="multipart/form-data" method="post" onsubmit="submitForm(event)"
+      action="send.php">
       <fieldset class="form-preview">
         <legend class="visually-hidden">Превью с картинкой</legend>
-        <div class="preview__img">
+        <div class="form-preview_img">
           <img src="images/form/form-preview@1x.png" alt="Пончик">
         </div>
       </fieldset>
@@ -213,37 +211,36 @@
           <button class="form-info__close-button" type="button"></button>
         </span>
         <span class="form-info__controls">
-          <input class="form-info__input" type="text" placeholder="Ваше имя" name="form-name">
-          <input class="form-info__input" type="tel" placeholder="Телефон" name="form-tel">
+          <input class="form-info__input" type="text" placeholder="Ваше имя" name="form-name" required maxlength="40">
 
-
+          <input class="form-info__input" type="tel" placeholder="Телефон" name="form-tel" required maxlength="15">
 
           <span class="form-info__radio">
             <label class="form-info__radio-label">
-              <input class="visually-hidden" type="radio" name="delivery" value="Доставка">
-              <span class="form-info__radio-mark"></span>
-              <span class="form-info__radio-info">Доставка</span>
-            </label>
-            <label class="form-info__radio-label">
-              <input class="visually-hidden" type="radio" name="delivery" value="Самовывоз" checked>
+              <input class="visually-hidden" type="radio" name="delivery" value="Самовывоз">
               <span class="form-info__radio-mark"></span>
               <span class="form-info__radio-info">Самовывоз</span>
             </label>
+            <label class="form-info__radio-label">
+              <input class="visually-hidden" type="radio" name="delivery" value="Доставка" checked>
+              <span class="form-info__radio-mark"></span>
+              <span class="form-info__radio-info">Доставка</span>
+            </label>
           </span>
 
-          <input class="form-info__input" type="text" placeholder="Улица, дом, квартира">
+          <input class="form-info__input" type="text" placeholder="Улица, дом, квартира" name="address" required
+            maxlength="50">
 
-          <span class="form-info__houes-info">
-            <input class="form-info__input" type="text" placeholder="'Этаж'">
-            <input class="form-info__input" type="text" placeholder="Домофон">
+          <span class="form-info__house-info">
+            <input class="form-info__input" type="text" placeholder="Этаж" name="" required maxlength="10">
+            <input class="form-info__input" type="text" placeholder="Домофон" name="intercom" required maxlength="10">
           </span>
         </span>
+        <button class="form-info__button" type="submit">Оформить</button>
       </fieldset>
-      <button class="form-info__button" type="submit">Отправить</button>
+      <input class="visually-hidden" id="basket-order" name="basket-order" type="text" value="">
     </form>
   </div>
-
-
 
   <template id="catalog-product" name="catalog-product">
     <li class="products__item">
@@ -264,7 +261,6 @@
     </li>
   </template>
 
-
   <template id="basket-product" name="basket-product">
     <li class="basket__item">
       <div class="thumbnails-product" data-basket-product-id="">
@@ -272,23 +268,18 @@
           <img src="" alt="">
         </div>
         <div class="thumbnails-product__info">
-          <input class="visually-hidden product-input-name" type="text" name="product-name" value="">
           <span class="thumbnails-product__title"></span>
           <span class="thumbnails-product__weight">
           </span>
-          <input class="visually-hidden product-input-price" type="text" name="product-price" id="product-price"
-            value="">
           <span class="thumbnails-product__price"></span>
         </div>
         <div class="thumbnails-product__control product-control">
           <div class="control-wrapper">
             <button class="control-decrease" type="button"></button>
-            <input class="visually-hidden product-input-counter" type="text" name="product-counter" value="">
             <span class="product-quantity thumbnails-product__quantity"></span>
             <button class="control-increase" type="button"></button>
           </div>
         </div>
-        <input class="visually-hidden product-sum-value" type="text" name="product-counter" value="">
       </div>
     </li>
   </template>

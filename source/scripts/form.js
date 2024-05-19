@@ -1,7 +1,31 @@
 const basketForm = document.querySelector("#order-form");
-let formResult = document.querySelector("#form-result");
+const basketSubmitButton = document.querySelector(".basket__submit");
 
-basketForm.addEventListener("submit", submitForm);
+const formModalWrapper = document.querySelector(".form-wrapper");
+const modalFormCloseButton = document.querySelector(".form-info__close-button");
+const body = document.body;
+
+function formModalOpen() {
+  formModalWrapper.classList.add("form--open");
+  body.classList.add("modal-open");
+
+  const basketResultValue = document.querySelector("#basket-result-value");
+  const basketOrder = document.querySelector("#basket-order");
+
+  basketOrder.setAttribute("value", basketResultValue.textContent);
+
+  console.log(basketOrder);
+  modalFormCloseButton.addEventListener("click", formModalClose);
+}
+basketSubmitButton.addEventListener("click", formModalOpen);
+
+function formModalClose() {
+  formModalWrapper.classList.remove("form--open");
+  body.classList.remove("modal-open");
+  modalFormCloseButton.removeEventListener("click", formModalClose);
+}
+modalFormCloseButton.addEventListener("click", formModalClose);
+
 async function submitForm(event) {
   event.preventDefault(); // отключаем перезагрузку/перенаправление страницы
   try {
@@ -35,45 +59,4 @@ async function submitForm(event) {
   basketForm.reset();
   window.location.reload();
 }
-
-function calcBasketInfo(basketResultInput) {
-  const basketProducts = document.querySelectorAll(".basket__item");
-
-  const productsTotalValue = [];
-  const products = [];
-  let product = {
-    name: "",
-    counter: 0,
-    price: 0,
-  };
-
-  basketProducts.forEach((basketProduct) => {
-    const productName = basketProduct.querySelector(
-      ".product-input-name"
-    ).value;
-
-    const productCounter = basketProduct.querySelector(
-      ".product-input-counter"
-    ).value;
-
-    const productPrice = basketProduct.querySelector(
-      ".product-input-price"
-    ).value;
-
-    product = {
-      name: productName,
-      counter: productCounter,
-      price: productPrice,
-    };
-    products.push(product);
-  });
-
-  productsTotalValue.push(basketResultInput);
-
-  let result = JSON.stringify(products);
-  formResult.setAttribute("value", result);
-
-  return formResult;
-}
-
-export { calcBasketInfo };
+basketForm.addEventListener("submit", submitForm);

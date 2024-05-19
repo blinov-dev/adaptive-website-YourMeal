@@ -19,10 +19,6 @@ function productAddToBasket() {
   basketProduct.querySelector(".thumbnails-product__title").textContent =
     modalWrapper.querySelector(".product-modal__title").textContent;
 
-  basketProduct.querySelector(".product-input-name").value =
-    basketProduct.querySelector(".thumbnails-product__title").textContent;
-
-
   basketProduct.querySelector(".thumbnails-product__weight").textContent =
     modalWrapper.querySelector(".composition-product__weight").textContent;
 
@@ -38,18 +34,6 @@ function productAddToBasket() {
   const basketProductId = basketProduct.querySelector(".thumbnails-product")
     .dataset.basketProductId;
 
-  basketProduct.querySelector(
-    ".product-input-price"
-  ).id = `basket-product-price-${basketProductId}`;
-
-  basketProduct.querySelector(
-    ".product-input-counter"
-  ).id = `basket-product-counter-${basketProductId}`;
-
-  basketProduct.querySelector(
-    ".product-input-name"
-  ).id = `basket-product-name-${basketProductId}`;
-
   const productInBasket = document.querySelector(
     '.product[data-product-id="' + basketProductId + '"]'
   );
@@ -59,12 +43,6 @@ function productAddToBasket() {
   productInBasketButton.setAttribute("disabled", "disabled");
   productInBasketButton.textContent = `В корзине`;
   productInBasketButton.style.backgroundColor = "rgba(248, 99, 16, 1)";
-
-  const productValue = basketProduct.querySelector(
-    ".thumbnails-product__price"
-  ).textContent;
-  const productInputValue = productValue.slice(0, -1);
-  basketProduct.querySelector(".product-input-price").value = productInputValue;
 
   modalClose();
   basketProductQuantity(productInBasketButton);

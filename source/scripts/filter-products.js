@@ -32,22 +32,27 @@ function selectFilter() {
     this.classList.add("product-filter__button--active");
 
     const selectedFilterId = this.id;
+    const productsCategoryTytle = document.querySelector(".products__title");
     switch (selectedFilterId) {
       case "all":
         selectAllProducts();
         addModalOpenEventToProductButton();
+        productsCategoryTytle.textContent = "Вся продукция";
         break;
       case "burgers":
         selectProducts(selectedFilterId);
         addModalOpenEventToProductButton();
+        productsCategoryTytle.textContent = "Бургеры";
         break;
       case "snacks":
         selectProducts(selectedFilterId);
         addModalOpenEventToProductButton();
+        productsCategoryTytle.textContent = "Снеки";
         break;
       case "hotdogs":
         selectProducts(selectedFilterId);
         addModalOpenEventToProductButton();
+        productsCategoryTytle.textContent = "Хот-доги";
         break;
     }
   }

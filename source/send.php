@@ -8,14 +8,25 @@ require './vendor/phpmailer/Exception.php';
 if (!error_get_last()) {
 
   // Переменные, которые отправляет пользователь
-  $formResult = $_POST['form-result'];
-
+  $name = $_POST['form-name'];
+  $tel = $_POST['form-tel'];
+  $delivery = $_POST['delivery'];
+  $address = $_POST['address'];
+  $floor = $_POST['floor'];
+  $intercom = $_POST['intercom'];
+  $basket = $_POST['basket-order'];
 
   // Формирование самого письма
-  $title = "Заголовок письма";
+  $title = "Заказ с сайта";
   $body = "
-    <h2>Заказ</h2>
-    <h3> $formResult<h3>
+    <h1>Заказ с сайта</h1>
+    <p>Имя: $name<p>
+    <p><b>Телефон:</b> $tel<p>
+    <p><b>Доставка:</b> $delivery<p>
+    <p><b>Адрес:</b> $address<p>
+    <p><b>Этаж:</b> $floor<p>
+    <p><b>Интерком:</b> $intercom<p>
+    <p><b>Корзина:</b> $basket<p>
     ";
 
   // Настройки PHPMailer

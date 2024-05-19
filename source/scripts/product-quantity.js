@@ -4,17 +4,13 @@ function changeModalProductQuantity() {
   const productModal = document.querySelector(".product-modal");
   const controlButtonDecrease = productModal.querySelector(".control-decrease");
   const controlButtonIncrease = productModal.querySelector(".control-increase");
-  const controlInput = productModal.querySelector(".product-input-counter");
   const productQuantity = productModal.querySelector(".product-quantity");
-
   const PRODUCT_QUANTITY_DEFAULT = 1;
-  controlInput.value = PRODUCT_QUANTITY_DEFAULT;
-  let currentValue = controlInput.value;
+  let currentValue = PRODUCT_QUANTITY_DEFAULT;
   productQuantity.textContent = currentValue;
 
   function productQuantityDefault() {
-    controlInput.value = PRODUCT_QUANTITY_DEFAULT;
-    currentValue = controlInput.value;
+    currentValue = PRODUCT_QUANTITY_DEFAULT;
     productQuantity.textContent = currentValue;
   }
 
@@ -22,7 +18,6 @@ function changeModalProductQuantity() {
     if (currentValue - PRODUCT_QUANTITY_DEFAULT >= PRODUCT_QUANTITY_DEFAULT) {
       this.removeAttribute("disabled", "disabled");
       currentValue--;
-      controlInput.value = currentValue;
       productQuantity.textContent = currentValue;
     }
     if (currentValue === PRODUCT_QUANTITY_DEFAULT) {
@@ -35,7 +30,6 @@ function changeModalProductQuantity() {
     controlButtonDecrease.removeAttribute("disabled", "disabled");
     if (currentValue >= PRODUCT_QUANTITY_DEFAULT) {
       currentValue++;
-      controlInput.value = currentValue;
       productQuantity.textContent = currentValue;
     }
     return currentValue;
@@ -45,6 +39,8 @@ function changeModalProductQuantity() {
   controlButtonDecrease.setAttribute("disabled", "disabled");
   controlButtonDecrease.addEventListener("click", decreaseProductQuantity);
   controlButtonIncrease.addEventListener("click", increaseProductQuantity);
+
+  return productQuantity;
 }
 
 function changeBasketProductQuantity(
@@ -56,13 +52,11 @@ function changeBasketProductQuantity(
     basketProduct.querySelector(".control-decrease");
   const controlButtonIncrease =
     basketProduct.querySelector(".control-increase");
-  const controlInput = basketProduct.querySelector(".product-input-counter");
   const productQuantity = basketProduct.querySelector(".product-quantity");
 
   const PRODUCT_QUANTITY_DEFAULT = 1;
   let currentValue = newValue;
-  controlInput.value = currentValue;
-  productQuantity.textContent = controlInput.value;
+  productQuantity.textContent = currentValue;
 
   controlButtonDecrease.addEventListener(
     "click",
@@ -84,7 +78,6 @@ function changeBasketProductQuantity(
     if (currentValue - PRODUCT_QUANTITY_DEFAULT >= PRODUCT_QUANTITY_DEFAULT) {
       this.removeAttribute("disabled", "disabled");
       currentValue--;
-      controlInput.value = currentValue;
       productQuantity.textContent = currentValue;
     }
     calcProductInBasketPrice();
@@ -96,7 +89,6 @@ function changeBasketProductQuantity(
     controlButtonDecrease.removeAttribute("disabled", "disabled");
     if (currentValue >= PRODUCT_QUANTITY_DEFAULT) {
       currentValue++;
-      controlInput.value = currentValue;
       productQuantity.textContent = currentValue;
     }
     calcProductInBasketPrice();
