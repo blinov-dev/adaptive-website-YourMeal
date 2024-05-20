@@ -73,3 +73,25 @@ renderAllProducts();
 
 // Первый клик на всех проудктах
 buttonFilteredAll.click();
+
+function mobileFilter() {
+  const filterMobileButton = document.querySelector(".filter-mobile-button");
+  const filter = document.querySelector(".product-filter");
+  const filterList = document.querySelector(".product-filter__list");
+  const screenWidth = window.screen.width;
+  const SCREEN_WIDTH_DESKTOP = 1024;
+  if (screenWidth < SCREEN_WIDTH_DESKTOP) {
+    filter.classList.add("product-filter--mobile");
+    filterMobileButton.addEventListener("click", function () {
+      if (filterList.style.display == "none") {
+        filterList.style.display = "grid";
+      } else {
+        filterList.style.display = "none";
+      }
+    });
+
+  } else {
+    filter.classList.remove("product-filter--mobile");
+  }
+}
+mobileFilter();

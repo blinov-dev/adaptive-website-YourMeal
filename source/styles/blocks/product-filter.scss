@@ -5,18 +5,41 @@
   @media (min-width: $width-tablet) {
     margin-bottom: 50px;
   }
+
+  .filter-mobile-button {
+    display: none;
+  }
+}
+
+.product-filter--mobile {
+  .product-filter__list {
+    display: none;
+    margin-top: 20px;
+  }
+  .filter-mobile-button {
+    display: block;
+    background-color: $main-color;
+    padding: 8px 14px;
+    border-radius: 50px;
+    align-items: center;
+    font-size: 16px;
+  }
 }
 
 .product-filter__list {
   max-width: 100%;
   box-sizing: border-box;
-  display: grid;
+  display: none;
   justify-content: center;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   @media (min-width: $width-tablet) {
     justify-content: flex-start;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+
+  &--active {
+    display: grid;
   }
 }
 

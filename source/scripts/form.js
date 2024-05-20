@@ -14,7 +14,6 @@ function formModalOpen() {
 
   basketOrder.setAttribute("value", basketResultValue.textContent);
 
-  console.log(basketOrder);
   modalFormCloseButton.addEventListener("click", formModalClose);
 }
 basketSubmitButton.addEventListener("click", formModalOpen);

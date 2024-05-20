@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="icon" href="images/favicon.ico"><!-- 64×64 -->
   <link rel="stylesheet" href="styles/styles.css">
-  <script src="scripts/index.js" defer type="module"></script>
 </head>
 
 <body class="page__body">
@@ -34,7 +33,8 @@
     <div class="main-header__decor"></div>
   </header>
   <main class="page-main">
-    <div class="product-filter">
+    <div class="product-filter product-filter--mobile">
+      <button class="filter-mobile-button" type="button">Фильтры</button>
       <ul class="product-filter__list">
         <li class="product-filter__item">
           <button class="product-filter__button" id="all">
@@ -92,7 +92,6 @@
       <div class="basket">
         <div class="basket-header">
           <h3 class="basket-header__title">Корзина</h3>
-          <!-- <input class="visually-hidden" type="text" name="basket-counter" id="basket-counter-input" value=""> -->
           <span class="basket-header__counter">0</span>
         </div>
         <div class="basket__wrapper">
@@ -152,7 +151,6 @@
         </li>
       </ul>
     </div>
-    </div>
     <div class="copyright">
       <span class="name-site">© YouMeal, 2024</span>
       <span class="autor-site">Blinov Alexandr</span>
@@ -174,7 +172,7 @@
         <div class="product-modal__text-block">
           <p class="product-modal__description"></p>
           <div class="composition-product">
-            <span class="composition__title">Состав:</span>
+            <span class="composition-product__title">Состав:</span>
             <ul class="composition-product__list">
             </ul>
             <span class="composition-product__weight">
@@ -197,19 +195,19 @@
   </div>
 
   <div class="form-wrapper">
-    <form class="form" id="order-form" enctype="multipart/form-data" method="post" onsubmit="submitForm(event)"
-      action="send.php">
+    <form class="form" id="order-form" enctype="multipart/form-data" method="post" name="order-form"
+      onsubmit="submitForm(event)" action="send.php">
       <fieldset class="form-preview">
         <legend class="visually-hidden">Превью с картинкой</legend>
-        <div class="form-preview_img">
+        <div class="form-preview__img">
           <img src="images/form/form-preview@1x.png" alt="Пончик">
         </div>
       </fieldset>
       <fieldset class="form-info">
-        <span class="form-info__header">
-          <legend class="form-info__title">Доставка</legend>
+        <div class="form-info__header">
+          <h4 class="form-info__title">Доставка</h4>
           <button class="form-info__close-button" type="button"></button>
-        </span>
+        </div>
         <span class="form-info__controls">
           <input class="form-info__input" type="text" placeholder="Ваше имя" name="form-name" required maxlength="40">
 
@@ -232,17 +230,17 @@
             maxlength="50">
 
           <span class="form-info__house-info">
-            <input class="form-info__input" type="text" placeholder="Этаж" name="" required maxlength="10">
+            <input class="form-info__input" type="text" placeholder="Этаж" name="floor" required maxlength="10">
             <input class="form-info__input" type="text" placeholder="Домофон" name="intercom" required maxlength="10">
           </span>
         </span>
         <button class="form-info__button" type="submit">Оформить</button>
       </fieldset>
-      <input class="visually-hidden" id="basket-order" name="basket-order" type="text" value="">
+      <input class="visually-hidden" id="basket-order" name="basket-order" type="text">
     </form>
   </div>
 
-  <template id="catalog-product" name="catalog-product">
+  <template id="catalog-product">
     <li class="products__item">
       <div class="product" data-product-id="">
         <div class="product__img">
@@ -255,13 +253,14 @@
           </span>
           <span class="product__description visually-hidden"></span>
           <ul class="product__composition-list composition-product__list visually-hidden">
+          </ul>
         </div>
         <button class="product__button" type="button"></button>
       </div>
     </li>
   </template>
 
-  <template id="basket-product" name="basket-product">
+  <template id="basket-product">
     <li class="basket__item">
       <div class="thumbnails-product" data-basket-product-id="">
         <div class="thumbnails-product__img">
@@ -283,6 +282,9 @@
       </div>
     </li>
   </template>
+
+  <script src="scripts/index.js" type="module"></script>
 </body>
+
 
 </html>
