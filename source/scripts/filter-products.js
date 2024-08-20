@@ -1,65 +1,70 @@
-import { renderProduct } from "./render-products";
-import { products } from "./data-products.js";
-import { addModalOpenEventToProductButton } from "./product-modal.js";
-const filterButton = document.querySelectorAll(".product-filter__button");
-const buttonFilteredAll = document.querySelector("#all");
+import { renderProduct } from './render-products';
+import { products } from './data-products.js';
+import { addModalOpenEventToProductButton } from './product-modal.js';
+const filterButton = document.querySelectorAll('.product-filter__button');
+const buttonFilteredAll = document.querySelector('#all');
 
 function selectProducts(selectedFilterId) {
-  const rendersProducts = document.querySelectorAll(".products__item");
+  const rendersProducts = document.querySelectorAll('.products__item');
 
-  rendersProducts.forEach(function (element) {
+  rendersProducts.forEach((element) => {
     const productsCategory = element.children[0].dataset.productCategory;
-    element.classList.add("not-selected");
+    element.classList.add('not-selected');
     if (productsCategory === selectedFilterId) {
-      element.classList.remove("not-selected");
-      element.classList.add("selected");
+      element.classList.remove('not-selected');
+      element.classList.add('selected');
     }
   });
 }
 
 function selectAllProducts() {
-  const rendersProducts = document.querySelectorAll(".products__item");
-  rendersProducts.forEach(function (element) {
-    element.classList.remove("not-selected");
-    element.classList.add("selected");
+  const rendersProducts = document.querySelectorAll('.products__item');
+  rendersProducts.forEach((element) => {
+    element.classList.remove('not-selected');
+    element.classList.add('selected');
   });
 }
 function selectFilter() {
-  if (!this.classList.contains("product-filter__button--active")) {
-    filterButton.forEach(function (item) {
-      item.classList.remove("product-filter__button--active");
+  if (!this.classList.contains('product-filter__button--active')) {
+    filterButton.forEach((item) => {
+      item.classList.remove('product-filter__button--active');
     });
-    this.classList.add("product-filter__button--active");
+    this.classList.add('product-filter__button--active');
 
     const selectedFilterId = this.id;
-    const productsCategoryTytle = document.querySelector(".products__title");
+    const productsCategoryTitle = document.querySelector('.products__title');
     switch (selectedFilterId) {
-      case "all":
+      case 'all':
         selectAllProducts();
         addModalOpenEventToProductButton();
-        productsCategoryTytle.textContent = "Вся продукция";
+        productsCategoryTitle.textContent = 'Вся продукция';
         break;
-      case "burgers":
+      case 'burgers':
         selectProducts(selectedFilterId);
         addModalOpenEventToProductButton();
-        productsCategoryTytle.textContent = "Бургеры";
+        productsCategoryTitle.textContent = 'Бургеры';
         break;
-      case "snacks":
+      case 'snacks':
         selectProducts(selectedFilterId);
         addModalOpenEventToProductButton();
-        productsCategoryTytle.textContent = "Снеки";
+        productsCategoryTitle.textContent = 'Снеки';
         break;
-      case "hotdogs":
+      case 'hotdogs':
         selectProducts(selectedFilterId);
         addModalOpenEventToProductButton();
-        productsCategoryTytle.textContent = "Хот-доги";
+        productsCategoryTitle.textContent = 'Хот-доги';
+        break;
+      case 'combo':
+        selectProducts(selectedFilterId);
+        addModalOpenEventToProductButton();
+        productsCategoryTitle.textContent = 'Комбо';
         break;
     }
   }
 }
 
-filterButton.forEach(function (element) {
-  element.addEventListener("click", selectFilter);
+filterButton.forEach((element) => {
+  element.addEventListener('click', selectFilter);
 });
 
 function renderAllProducts() {
@@ -71,27 +76,21 @@ function renderAllProducts() {
 // Отрисовка всех элементов на странице
 renderAllProducts();
 
-// Первый клик на всех проудктах
+// Первый клик на всех продуктах
 buttonFilteredAll.click();
 
 function mobileFilter() {
-  const filterMobileButton = document.querySelector(".filter-mobile-button");
-  const filter = document.querySelector(".product-filter");
-  const filterList = document.querySelector(".product-filter__list");
-  const screenWidth = window.screen.width;
-  const SCREEN_WIDTH_DESKTOP = 1024;
-  if (screenWidth < SCREEN_WIDTH_DESKTOP) {
-    filter.classList.add("product-filter--mobile");
-    filterMobileButton.addEventListener("click", function () {
-      if (filterList.style.display == "none") {
-        filterList.style.display = "grid";
-      } else {
-        filterList.style.display = "none";
-      }
-    });
+  const filterMobileButton = document.querySelector('.filter-mobile-button');
+  const filter = document.querySelector('.product-filter');
 
+  if (window.innerWidth < 768) {
+    filter.classList.add('mobile-filter');
+    filter.classList.add('mobile-filter--open');
+    filterMobileButton.addEventListener('click', () => {
+      filter.classList.toggle('mobile-filter--open');
+    });
   } else {
-    filter.classList.remove("product-filter--mobile");
+    filter.classList.remove('mobile-filter');
   }
 }
 mobileFilter();

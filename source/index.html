@@ -12,7 +12,7 @@
 <body class="page__body">
   <header class="main-header">
     <a class="main-logo" href="index.html">
-      <svg class='main-logo__svg' width="153" height="35">
+      <svg class="main-logo__svg" width="153" height="35">
         <use class="main-logo" href="images/sprite.svg#main-logo"></use>
       </svg>
     </a>
@@ -32,9 +32,11 @@
     </div>
     <div class="main-header__decor"></div>
   </header>
+
   <main class="page-main">
-    <div class="product-filter product-filter--mobile">
+    <div class="product-filter mobile-filter">
       <button class="filter-mobile-button" type="button">Фильтры</button>
+
       <ul class="product-filter__list">
         <li class="product-filter__item">
           <button class="product-filter__button" id="all">
@@ -88,6 +90,7 @@
         </li>
       </ul>
     </div>
+
     <section class="catalog">
       <div class="basket">
         <div class="basket-header">
@@ -117,16 +120,17 @@
       </div>
     </section>
   </main>
+
   <footer class="main-footer">
     <a class="main-logo" href="index.html">
-      <svg class='main-logo__svg' width="153" height="35">
+      <svg class="main-logo__svg" width="153" height="35">
         <use class="main-logo" href="images/sprite.svg#main-logo"></use>
       </svg>
     </a>
     <div class="contacts">
       <span class="contacts__title">Номер для заказа</span>
-      <a class="contacts__phone" href=»tel:88005553535″>
-        <svg class='contacts__svg' width="24" height="18">
+      <a class="contacts__phone" href="tel:88005553535">
+        <svg class="contacts__svg" width="24" height="18">
           <use class="phone-icon" href="images/sprite.svg#phone-icon"></use>
         </svg>
         +7 (800)-555-35-35
@@ -137,7 +141,7 @@
       <ul class="socials__list">
         <li class="socials__item">
           <a class="socials__link" href="#">
-            <svg class='socials__svg' width="24" height="24">
+            <svg class="socials__svg" width="24" height="24">
               <use class="instagram-icon" href="images/sprite.svg#vkontakte-icon"></use>
             </svg>
           </a>
@@ -157,7 +161,6 @@
       <span class="autor-makets">Design: Anastasia Ilina</span>
     </div>
   </footer>
-
 
   <div class="modal-wrapper">
     <div class="product-modal" data-modal-product-id="">
@@ -283,6 +286,7 @@
     </li>
   </template>
 
+  <img class="move-up-button" src="images/arrow-up.svg">
   <script src="scripts/index.js" type="module"></script>
 </body>
 

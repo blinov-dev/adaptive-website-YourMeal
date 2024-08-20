@@ -6,7 +6,7 @@
   align-items: flex-start;
   width: 100%;
   background-color: $white-color;
-  padding: 51px 75px;
+  padding: 20px;
   box-sizing: border-box;
 
   .main-logo {
@@ -81,5 +81,9 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+  }
+
+  @media (min-width: $width-tablet) {
+    padding: 51px 75px;
   }
 }

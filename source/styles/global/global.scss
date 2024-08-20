@@ -62,3 +62,18 @@ body {
     margin: auto;
   }
 }
+
+.move-up-button {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: fixed;
+  bottom: 50%;
+  right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  z-index: 2;
+  opacity: 0;
+  background-color: $main-color;
+}

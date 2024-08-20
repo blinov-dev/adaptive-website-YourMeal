@@ -1,58 +1,58 @@
-const basket = document.querySelector(".basket");
-const basketResultValue = document.querySelector("#basket-result-value");
+const basket = document.querySelector('.basket');
+const basketResultValue = document.querySelector('#basket-result-value');
 
 function mobileBasket() {
+  basket.classList.add('basket__mobile--open');
   const screenWidth = window.screen.width;
   const SCREEN_WIDTH_DESKTOP = 1024;
   if (screenWidth < SCREEN_WIDTH_DESKTOP) {
-    basket.addEventListener("click", function () {
-      basket.classList.toggle("basket__mobile--open");
+    basket.addEventListener('click', () => {
+      basket.classList.toggle('basket__mobile--open');
     });
   }
 }
 mobileBasket();
 
 function clearBasket() {
-  const basket = document.querySelector(".basket");
-  const basketProducts = document.querySelectorAll(".basket__item");
+  const basketProducts = document.querySelectorAll('.basket__item');
   if (basketProducts.length === 0) {
-    basket.classList.add("basket--clear");
+    basket.classList.add('basket--clear');
   } else {
-    basket.classList.remove("basket--clear");
+    basket.classList.remove('basket--clear');
   }
 }
 clearBasket();
 
 function basketTypeDelivery(totalPrice, basketProducts) {
-  const basketDelivery = document.querySelector(".basket__type-delivery");
+  const basketDelivery = document.querySelector('.basket__type-delivery');
   if (totalPrice >= 1000 && basketProducts.length > 0) {
-    basketDelivery.textContent = "Бесплатная доставка";
+    basketDelivery.textContent = 'Бесплатная доставка';
   } else {
-    basketDelivery.textContent = "Платная доставка 250₽";
+    basketDelivery.textContent = 'Платная доставка 250₽';
   }
 }
 
 function calcBasketInfo(basketResult) {
-  const basketProducts = document.querySelectorAll(".basket__item");
+  const basketProducts = document.querySelectorAll('.basket__item');
 
   const productsTotalValue = [];
   const products = [];
   let product = {
-    name: "",
+    name: '',
     counter: 0,
     price: 0,
   };
 
   basketProducts.forEach((basketProduct) => {
     const productName = basketProduct.querySelector(
-      ".thumbnails-product__title"
+      '.thumbnails-product__title'
     ).textContent;
 
     const productCounter =
-      basketProduct.querySelector(".product-quantity").textContent;
+      basketProduct.querySelector('.product-quantity').textContent;
 
     const productPrice = basketProduct.querySelector(
-      ".thumbnails-product__price"
+      '.thumbnails-product__price'
     ).textContent;
 
     product = {
@@ -72,17 +72,17 @@ function calcBasketInfo(basketResult) {
 }
 
 function calcProductInBasketPrice() {
-  const basketProducts = document.querySelectorAll(".basket__item");
-  const basketResult = document.querySelector(".basket-result__value");
+  const basketProducts = document.querySelectorAll('.basket__item');
+  const basketResult = document.querySelector('.basket-result__value');
 
   let totalPrice = 0;
 
   basketProducts.forEach((basketProduct) => {
     const productCounter = basketProduct.querySelector(
-      ".thumbnails-product__quantity"
+      '.thumbnails-product__quantity'
     ).textContent;
     const productPrice = basketProduct.querySelector(
-      ".thumbnails-product__price"
+      '.thumbnails-product__price'
     ).textContent;
     const productPriceInt = productPrice.slice(0, productPrice.length - 1);
 
@@ -98,9 +98,9 @@ function calcProductInBasketPrice() {
 }
 
 function calcBasketCounter() {
-  const basketCounter = document.querySelector(".basket-header__counter");
+  const basketCounter = document.querySelector('.basket-header__counter');
   const basketProductsQuantity = document.querySelectorAll(
-    ".thumbnails-product__quantity"
+    '.thumbnails-product__quantity'
   );
 
   let totalQuantity = 0;

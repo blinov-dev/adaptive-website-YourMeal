@@ -4,8 +4,9 @@
   align-items: flex-start;
   gap: 30px;
   grid-template-columns: 1fr;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   @media (min-width: $width-desktop) {
+    margin-bottom: 100px;
     padding-top: 0;
     grid-template-columns: 0.5fr 2fr;
   }

@@ -1,45 +1,47 @@
 .product-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   @media (min-width: $width-tablet) {
     margin-bottom: 50px;
   }
-
-  .filter-mobile-button {
-    display: none;
-  }
+}
+.filter-mobile-button {
+  display: none;
 }
 
-.product-filter--mobile {
-  .product-filter__list {
-    display: none;
-    margin-top: 20px;
-  }
+.mobile-filter {
   .filter-mobile-button {
     display: block;
-    background-color: $main-color;
-    padding: 8px 14px;
+    max-width: min-content;
+    background-color: #000;
+    color: #fff;
+    padding: 12px 33px;
     border-radius: 50px;
     align-items: center;
     font-size: 16px;
   }
 }
 
+.mobile-filter--open {
+  .product-filter__button {
+    display: none;
+  }
+}
+
 .product-filter__list {
   max-width: 100%;
   box-sizing: border-box;
-  display: none;
+  display: grid;
   justify-content: center;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   @media (min-width: $width-tablet) {
     justify-content: flex-start;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-  }
-
-  &--active {
-    display: grid;
   }
 }
 
@@ -52,15 +54,23 @@
   border-radius: 50px;
   background-color: $white-color;
   word-break: break-all;
+  transition: background-color 0.5s linear;
   &::before {
     content: "";
     width: 24px;
     height: 24px;
   }
+  &--active {
+    background-color: $main-color;
+  }
+  &:hover {
+    background-color: $additional-color;
+  }
 }
 #all {
   &::before {
-    background-color: black;
+    border-radius: 50%;
+    background-color: rgb(73, 0, 0);
   }
 }
 #burgers {
@@ -107,8 +117,4 @@
   &::before {
     background-image: url("/images/product-filter/sauces-icon@1x.png");
   }
-}
-
-.product-filter__button--active {
-  background-color: $main-color;
 }

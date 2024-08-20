@@ -88,17 +88,14 @@
   margin-bottom: 40px;
 
   .product-modal__img {
-    max-width: 50%;
-    max-height: 50%;
+    margin: 0 auto;
     img {
       @include adaptive-img;
     }
 
     @media (min-width: $width-tablet) {
-      .product-modal__img {
-        width: 100%;
-        height: 100%;
-      }
+      max-width: 100%;
+      height: 100%;
     }
   }
 
