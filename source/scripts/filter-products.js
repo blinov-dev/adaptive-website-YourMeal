@@ -59,6 +59,31 @@ function selectFilter() {
         addModalOpenEventToProductButton();
         productsCategoryTitle.textContent = 'Комбо';
         break;
+      case 'pizza':
+        selectProducts(selectedFilterId);
+        addModalOpenEventToProductButton();
+        productsCategoryTitle.textContent = 'Пицца';
+        break;
+      case 'wok':
+        selectProducts(selectedFilterId);
+        addModalOpenEventToProductButton();
+        productsCategoryTitle.textContent = 'ВОК';
+        break;
+      case 'sauces':
+        selectProducts(selectedFilterId);
+        addModalOpenEventToProductButton();
+        productsCategoryTitle.textContent = 'Соусы';
+        break;
+      case 'dessert':
+        selectProducts(selectedFilterId);
+        addModalOpenEventToProductButton();
+        productsCategoryTitle.textContent = 'Десерты';
+        break;
+      case 'shawarma':
+        selectProducts(selectedFilterId);
+        addModalOpenEventToProductButton();
+        productsCategoryTitle.textContent = 'Шаурма';
+        break;
     }
   }
 }
